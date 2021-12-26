@@ -1,38 +1,18 @@
 const express = require("express");
 const Pokemon = require("./Pokemon");
-
+const fs = require("fs");
+var controller = require("./pokemonController");
 var router = express.Router();
+router.post("/", controller.InsertPokemons);
 
-router.post("/", (req,res) =>{
-    const newPokemon = new Pokemon(req.body);
-    newPokemon
-    .save()
-    .then((pokemon) => {
-        res.status(201).send(pokemon);
-    })
-    .catch((error)=>{
-        res.status(500).send(error);
-    });
-});
+router.get("/", controller.FindAllPokemons);
 
-router.get("/",(req,res)=>{
-    Pokemon.find({})
-    .then((pokemons)=>{
-        res.status(200).send(pokemons);
-    })
-    .catch((error)=>{
-        res.status(500).send(error);
-    });
-});
+router.delete("/", controller.DeleteAllPokemons);
 
-router.delete("/",(req,res)=>{
-    Pokemon.find({}).deleteMany()
-    .then((pokemons)=>{
-        res.status(200).send(pokemons);
-    })
-    .catch((error)=>{
-        res.status(500).send(error);
-    });
-});
-router.
-module.exports  = router;
+router.get("/:number/", controller.FindByNumber);
+
+router.delete("/:number/", controller.DeleteByNumber);
+
+router.put("/:number/", controller.UpdateByNumber);
+
+module.exports = router;
