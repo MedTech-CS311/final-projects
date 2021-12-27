@@ -2,7 +2,7 @@ const Pokemon = require("./Pokemon");
 const fs = require("fs");
 const pokemons = JSON.parse(
   fs.readFileSync(
-    "C:\\Users\\xxyou\\OneDrive\\Bureau\\POKEMONGO\\final-projects\\poke-mongo\\data\\pokemon.json"
+    "/Users/ASUS/Desktop/final-projects/poke-mongo/data/pokemon.json"
   ),
   "utf-8"
 );
