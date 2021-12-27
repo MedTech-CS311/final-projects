@@ -5,7 +5,9 @@ import App from './App';
 import PokemonButton,{editPokemon} from './components/PokemonButton';
 import PokemonSearchBar from './components/PokemonSearchBar';
 import PokemonCards from './components/PokemonCards';
+import PokemonList from './components/PokemonList';
 import reportWebVitals from './reportWebVitals';
+import PokemonCards from './components/PokemonCards';
 
 
 ReactDOM.render(
