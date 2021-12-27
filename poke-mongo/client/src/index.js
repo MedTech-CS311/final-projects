@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import PokemonCards from './components/PokemonCards';
+import PokemonList from './components/PokemonList';
 import reportWebVitals from './reportWebVitals';
+import PokemonCards from './components/PokemonCards';
 
 ReactDOM.render(
   <React.StrictMode>
-    <PokemonCards />
+    <PokemonList />
   </React.StrictMode>,
   document.getElementById('root')
 );
