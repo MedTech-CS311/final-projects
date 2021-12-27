@@ -2,13 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import PokemonButton,{editPokemon} from './components/PokemonButton';
+import PokemonSearchBar from './components/PokemonSearchBar';
 import PokemonCards from './components/PokemonCards';
 import reportWebVitals from './reportWebVitals';
 
+
 ReactDOM.render(
   <React.StrictMode>
-    <PokemonCards />
-  </React.StrictMode>,
+    <PokemonButton title ={editPokemon}/>
+    <PokemonSearchBar/>
+
+  </React.StrictMode>, 
   document.getElementById('root')
 );
 
