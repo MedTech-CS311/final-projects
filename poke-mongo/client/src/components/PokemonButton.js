@@ -16,7 +16,9 @@ function PokemonButton (props){
                 
         }
     }
-    return (<button onClick ={task} className = "PokeButt">{props.title}</button>);
+    return (<button onClick ={task} title={props.title} className = "pokeButt">
+   <p className="buttonText">{props.title}</p>
+    </button>);
 }
 export default PokemonButton;
 
