@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.aParent {
+  float: left;
+  clear: none;
+}
+
+.title {
+  background-color: lightgreen;
+}
+
+.author {
+  background-color: lightgreen;
+}
