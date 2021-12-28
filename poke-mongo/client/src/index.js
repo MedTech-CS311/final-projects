@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <div id="main_container">
-      <h1 id="main_title">POKE-MONGO</h1>
+      <h1 id="main_title">X POKE-MONGO X</h1>
       <PokemonButton title = {addPokemon}/>
       <PokemonButton title = {editPokemon}/>
       <PokemonButton title = {deletePokemon}/>

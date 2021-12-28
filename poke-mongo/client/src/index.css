@@ -13,6 +13,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700');
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
 
 body {
   margin: 0;
@@ -124,11 +125,11 @@ code {
 
 #main_title {
   text-align: center;
-  font-family: 'Pokemon_Solid';
+  font-family: 'Chakra Petch', sans-serif;
   letter-spacing: 5px;
   font-size: 75px;
-  margin-top: -30px;
-  margin-bottom: -10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   background: linear-gradient(to right, red 20%, white 40%, red 60%, white 80%, red 100%);
   background-size: 200% auto;
   background-clip: text;
@@ -201,15 +202,15 @@ li {
   --flying_primary: yellow;
   --flying_secondary: rgb(75, 75, 41);
   --ground_primary: brown;
-  --ground_secondary: yellow;
-  --rock_primary: darkgrey;
+  --ground_secondary: rgb(110, 56, 56);
+  --rock_primary: rgb(105, 105, 105);
   --rock_secondary: lightgray;
   --fighting_primary: silver;
   --fighting_secondary:pink;
-  --psychic_primary: purple;
-  --psychic_secondary: rgb(78, 2, 78);
+  --psychic_primary: rgb(192, 23, 192);
+  --psychic_secondary: rgb(43, 0, 43);
   --grass_primary: green;
-  --grass_secondary: yellow;
+  --grass_secondary: rgb(4, 228, 97);
   --dragon_primary: red;
   --dragon_secondary: silver;
   --ghost_primary: pink;
@@ -508,6 +509,15 @@ li {
 }
 .card#DragonFlying {
   background-color: var(--dragon_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);    
+}
+
+.card#WaterFlying {
+  background-color: var(--water_primary);
   box-shadow:
   inset 0 0 5px #fff,      /* inner white */
   0 0 5px #fff,            /* outer white */
@@ -917,6 +927,18 @@ li {
   1px 0 8px var(--flying_secondary);         /* outer right cyan */ 
 }
 
+.card#WaterFlying:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--flying_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--flying_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--flying_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--flying_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */ 
+}
+
 /*#endregion Card hover depending on type*/
 
 .card:after {
@@ -1245,6 +1267,15 @@ li {
   1px 0 8px var(--dragon_secondary);    
 }
 .card#DragonFlying h2 {
+  background: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);    
+}
+
+.card#WaterFlying h2 {
   background: var(--flying_secondary);
   box-shadow:
   inset 0 0 5px #fff,      /* inner white */
@@ -1595,6 +1626,15 @@ li {
 }
 
 .card#DragonFlying .cardDescription {
+  background-color: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);    
+}
+
+.card#WaterFlying .cardDescription {
   background-color: var(--flying_secondary);
   box-shadow:
   inset 0 0 5px #fff,      /* inner white */

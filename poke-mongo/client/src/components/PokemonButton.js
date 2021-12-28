@@ -1,6 +1,7 @@
 export var addPokemon = "Add Pokemon";
 export var editPokemon = "Edit Pokemon";
 export var deletePokemon = "Delete Pokemon";
+
 function PokemonButton (props){
     const task = () => {
         switch(props.title){
