@@ -1,7 +1,17 @@
-
+const bcrypt = require("bcryptjs");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const User = mongoose.model('User');
+
+
+function clean(obj) {
+  for (var propName in obj) {
+    if (obj[propName] === null || obj[propName] === undefined || obj[propName]==='') {
+      delete obj[propName];
+    }
+  }
+  return obj
+}
 
 // Create and Save a new user
 exports.create = (req, res) => {
@@ -54,7 +64,11 @@ exports.findAll = (req, res) => {
 };
 
 // Find a single user with an id
-exports.findOne = (req, res) => {
+exports.findOne = async (req, res) => {
+  
+    
+  // const user = await User.findOne({token}).exec();
+
     const id = req.params.id;
 
     User.findById(id)
@@ -75,53 +89,62 @@ exports.findOne = (req, res) => {
 };
 
 // Update a user by the id in the request
-exports.update = (req, res) => {
+exports.update = async (req, res) => {
+  try {
     const id = req.params.id;
+    const body = {username,email,password} =(req.body);
+    let done = 0;
+
+    //Encrypt user password
+    if(body.password)
+    body.password = await bcrypt.hash(body.password, 10);
+    if(body.email)
+        body.email= body.email.toLowerCase(); // sanitize: convert email to lowercase
+
   
-    User.updateOne(req.body, {
-      where: { id: id }
+    const user ={
+      Username : body.username,
+      Email: body.email,
+      Password: body.password
+    };
+
+    updates = clean(user); //cleaning empty attributes
+
+    User.findByIdAndUpdate(id,updates,null,function(err,res){
+      if (err){
+        console.log(err)
+         res.send(err);
+        
+    }
+    else{
+        console.log("User Updated Successfully");
+    }
     })
-      .then(num => {
-        if (num == 1) {
-          res.send({
-            message: "User was updated successfully."
-          });
-        } else {
-          res.send({
-            message: `Cannot update User with id=${id}. Maybe User was not found or req.body is empty!`
-          });
-        }
-      })
-      .catch(err => {
-        res.status(500).send({
-          message: "Error updating User with id=" + id
-        });
-      });
+    return res.status(200).send({
+      message : "User Updated Successfully !"
+    });
+
+   } catch (err) {
+      console.log(err);
+    }
   };
 
 // Delete a user with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  User.deleteOne({
-    where: { id: id }
-  })
+  User.findByIdAndDelete(id)
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "User was deleted successfully!"
+          message: `Couldn't Delete User with id=${id}!`
         });
       } else {
         res.send({
-          message: `Cannot delete User with id=${id}. Maybe User was not found!`
+          message: `User with id=${id} Deleted !`
         });
       }
     })
-    .catch(err => {
-      res.status(500).send({
-        message: "Could not delete User with id=" + id
-      });
-    });
 };
 
 // Delete all users from the database.

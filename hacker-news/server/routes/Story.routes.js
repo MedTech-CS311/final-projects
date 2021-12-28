@@ -4,12 +4,11 @@ const Story = require("../controllers/Story.controller");
 const story = require("../models/Story.model");
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-    const Stories = await story.find()
-    res.send(Stories)
-});
+router.get("/", Story.getStories);
 
-router.post("/", Story.create);
+router.get("/top10", Story.findTopTen);
+
+router.post("/Story", Story.create);
 
 
 app.use('/api/Stories', router);
