@@ -5,8 +5,9 @@ const bodyParser= require("body-parser");
 
 const db = require("./db")
 const mongoose = require("mongoose");
-const Pokemon = require("./resources/pokemon/Pokemon")
+
 app.use(bodyParser())
+
 
 app.get("/api/pokemon",(req,res) => {
     Pokemon.find({})

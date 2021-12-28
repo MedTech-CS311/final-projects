@@ -1,17 +1,8 @@
 const mongoose= require("mongoose")
-pokemondata = require( 'C:\Users\Acer\OneDrive\Bureau\project\final-projects\poke-mongo\data\pokemon.json' );
 // connecting to db
+/*const Pokemondata = require('./pokemon.json')*/
 
-/*const Pokemon = mongoose.model("Pokemon", 
-{
-    number: { type: Number, unique:true },
-    name : { type: String, unique:true },
-    types : [String],
-    imgUrl: String
-})
-module.exports = Pokemon;*/
-
-/*	const Pokemon = mongoose.model("Pokemon", 
+const Pokemon = mongoose.model("Pokemon", 
 {
     number: { type: Number, unique:true },
     name : { type: String, unique:true },
@@ -20,27 +11,42 @@ module.exports = Pokemon;*/
 })
 module.exports = Pokemon;
 
+var request = require('request');
+
+var insertAllPokemon = function() {
+	request('../data/pokemon.json', function (error, response, body) {
+  console.log('error:', error); 
+  console.log('statusCode:', response && response.statusCode); 
+  console.log('body:', body);
+});
+};
+
+// NOTE: DO NOT invoke this function as part of your
+// server code - it is meant to only be run once so that
+// you have access to data to work with
+insertAllPokemon();
+
+/*exports.reset = function( req, res ) {
+
+	const Pokemon = mongoose.model("Pokemon", 
+{
+    number: { type: Number, unique:true },
+    name : { type: String, unique:true },
+    types : [String],
+    imgUrl: String
+})
+
+
 	// clear all existing documents from the collections
 	Pokemon.find().remove();
 
-	// populate the foods collection from json data
-	// nothing fancy here as Food documents do not reference anything else
-	for( var i = 0; i < foodData.length; i++ ) {
-		new Pokemon( pokemondata[ i ] ).save();
-	}*/
-
-    exports.reset = function( req, res ) {
-
-        // get refs to the models we defined above
-        var Pokemon = mongoose.model( 'Pokemon' );
-        // clear all existing documents from the collections
-	Pokemon.find().remove();
 
 	// populate the foods collection from json data
 	// nothing fancy here as Food documents do not reference anything else
-	for( var i = 0; i < foodData.length; i++ ) {
-		new Pokemon( pokemondata[ i ] ).save();
+	for( var i = 0; i < PokemonData.length; i++ ) {
+		new Pokemon( PokemonData[ i ] ).save();
 	}
-}
+		}*/
+	
 
 
