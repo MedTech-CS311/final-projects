@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const strorySchema = new mongoose.Schema({
+const storySchema = new mongoose.Schema({
   id: {
     type: Number,
     required: true,
@@ -19,6 +19,6 @@ const strorySchema = new mongoose.Schema({
   },
 });
 
-const Story = mongoose.model("Story", strorySchema);
+const Story = mongoose.model("Story", storySchema);
 
 module.exports = Story;

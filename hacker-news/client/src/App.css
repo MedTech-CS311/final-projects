@@ -4,6 +4,7 @@
 
 .aParent {
   float: left;
+  margin-right: 50px;
   clear: none;
 }
 
@@ -13,4 +14,23 @@
 
 .author {
   background-color: lightgreen;
+}
+
+nav {
+  height: 50px;
+  background-color: greenyellow;
+}
+.liste {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.items {
+  margin-right: 10px;
+  color: black;
+  cursor: pointer;
 }
