@@ -5,13 +5,13 @@ function PokemonButton (props){
     const task = () => {
         switch(props.title){
             case addPokemon:
-                alert("added nigga");
+                alert("ADD");
                 break;
             case editPokemon:
-                alert("edit this nigga")
+                alert("EDIT")
                 break;
             case deletePokemon:
-                alert("delete ")
+                alert("DELETE")
                 break;
                 
         }

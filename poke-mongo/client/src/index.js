@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import PokemonButton,{editPokemon} from './components/PokemonButton';
+import PokemonButton,{addPokemon,editPokemon,deletePokemon} from './components/PokemonButton';
 import PokemonSearchBar from './components/PokemonSearchBar';
 import PokemonList from './components/PokemonList';
 import reportWebVitals from './reportWebVitals';
-import PokemonCards from './components/PokemonCards';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <PokemonList/>
+    <div id="main_container">
+      <h1 id="main_title">POKE-MONGO</h1>
+      <PokemonButton title = {addPokemon}/>
+      <PokemonButton title = {editPokemon}/>
+      <PokemonButton title = {deletePokemon}/>
+      <PokemonList/>
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

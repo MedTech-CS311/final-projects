@@ -41,23 +41,23 @@ code {
   background-color: rgba(255, 0, 0, 0);
   border-color: rgba(255, 255, 255, 0);
   color: red;
-
   font-family: 'Fira Mono', monospace;
   letter-spacing: 2.5px;
   padding-left: 4rem;
   padding-right: 4rem;
-  padding-top: 1.3rem;
+  padding-bottom: 1rem;
   line-height: 20px;
   text-align: left;
   transform: translateX(14rem);
-  width: 300px;
+  width: 200px;
   height: 200px;
+  margin-right: 12%;
   font-size: 1.5rem;
   font-weight: bold;
-  
-  
+
 }
-.buttonText:hover  {
+
+ .pokeButt:hover .buttonText  {
   text-shadow:
    0 0 10px #fff,      /* inner white */
    4px 0 16px #0ff,   /* inner left magenta short */
@@ -178,17 +178,51 @@ code {
 li {
   display: inline-block;
   vertical-align: top;
-  padding: 50px;
+  padding: 37px;
 }
 
 .list {
   margin-left: 45px;
 }
 
-.card {
+:root {
+  --fire_primary: red;
+  --fire_secondary: orange;
+  --water_primary: blue;
+  --water_secondary: lightblue;
+  --bug_primary: white;
+  --bug_secondary: lightgreen;
+  --normal_primary: grey;
+  --normal_secondary: white;
+  --poison_primary: lightgreen;
+  --poison_secondary: purple;
+  --electric_primary: cyan;
+  --electric_secondary: lightblue;
+  --flying_primary: yellow;
+  --flying_secondary: rgb(75, 75, 41);
+  --ground_primary: brown;
+  --ground_secondary: yellow;
+  --rock_primary: darkgrey;
+  --rock_secondary: lightgray;
+  --fighting_primary: silver;
+  --fighting_secondary:pink;
+  --psychic_primary: purple;
+  --psychic_secondary: rgb(78, 2, 78);
+  --grass_primary: green;
+  --grass_secondary: yellow;
+  --dragon_primary: red;
+  --dragon_secondary: silver;
+  --ghost_primary: pink;
+  --ghost_secondary: rgb(187, 98, 113);
+  --ice_primary:rgb(24, 182, 182);
+  --ice_secondary:rgb(112, 230, 230);
+}
+
+.card{
   background-color: #f0f;
   position: relative;
-  width: 120%;
+  width: 240px;
+  max-width: 240px;
   overflow: hidden;
   border-radius: 25px;
   box-shadow:
@@ -197,6 +231,291 @@ li {
     -1px 0 8px #0ff,        /* outer left magenta */
     1px 0 8px #0ff;         /* outer right cyan */
 }
+
+/*#region Card primary colors depending on type*/
+
+.card#GrassPoison {
+  background-color: var(--grass_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Fire {
+  background-color: var(--fire_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fire_secondary),        /* outer left magenta */
+  1px 0 8px var(--fire_secondary);         /* outer right cyan */
+}
+.card#FireFlying {
+  background-color: var(--fire_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#Water {
+  background-color: var(--water_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--water_secondary),        /* outer left magenta */
+  1px 0 8px var(--water_secondary);         /* outer right cyan */
+}
+.card#Bug {
+  background-color: var(--bug_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--bug_secondary),        /* outer left magenta */
+  1px 0 8px var(--bug_secondary);         /* outer right cyan */
+}
+.card#BugFlying {
+  background-color: var(--bug_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#BugPoison {
+  background-color: var(--bug_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#NormalFlying {
+  background-color: var(--normal_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#Normal {
+  background-color: var(--normal_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--normal_secondary),        /* outer left magenta */
+  1px 0 8px var(--normal_secondary);         /* outer right cyan */
+}
+.card#Poison {
+  background-color: var(--poison_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Electric {
+  background-color: var(--electric_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--electric_secondary),        /* outer left magenta */
+  1px 0 8px var(--electric_secondary);         /* outer right cyan */
+}
+.card#Ground {
+  background-color: var(--ground_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#PoisonGround {
+  background-color: var(--poison_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#PoisonFlying {
+  background-color: var(--poison_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#BugGrass {
+  background-color: var(--bug_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--grass_secondary),        /* outer left magenta */
+  1px 0 8px var(--grass_secondary);         /* outer right cyan */
+}
+.card#Fighting {
+  background-color: var(--fighting_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fighting_secondary),        /* outer left magenta */
+  1px 0 8px var(--fighting_secondary);         /* outer right cyan */
+}
+.card#WaterFighting {
+  background-color: var(--water_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fighting_secondary),        /* outer left magenta */
+  1px 0 8px var(--fighting_secondary);         /* outer right cyan */
+}
+.card#Psychic {
+  background-color: var(--psychic_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#RockGround {
+  background-color: var(--rock_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#WaterPoison {
+  background-color: var(--water_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#WaterPsychic {
+  background-color: var(--water_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#WaterIce {
+  background-color: var(--water_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ice_secondary),        /* outer left magenta */
+  1px 0 8px var(--ice_secondary);         /* outer right cyan */
+}
+.card#GhostPoison {
+  background-color: var(--ghost_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Rock {
+  background-color: var(--rock_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--rock_secondary),        /* outer left magenta */
+  1px 0 8px var(--rock_secondary);         /* outer right cyan */
+}
+.card#GrassPsychic {
+  background-color: var(--grass_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#GroundRock {
+  background-color: var(--ground_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--rock_secondary),        /* outer left magenta */
+  1px 0 8px var(--rock_secondary);         /* outer right cyan */
+}
+.card#IcePsychic {
+  background-color: var(--ice_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#Grass {
+  background-color: var(--grass_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--grass_secondary),        /* outer left magenta */
+  1px 0 8px var(--grass_secondary);         /* outer right cyan */
+}
+.card#RockWater {
+  background-color: var(--rock_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--water_secondary),        /* outer left magenta */
+  1px 0 8px var(--water_secondary);         /* outer right cyan */
+}
+.card#RockFlying {
+  background-color: var(--rock_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#IceFlying {
+  background-color: var(--ice_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#ElectricFlying {
+  background-color: var(--electric_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#FireFlying {
+  background-color: var(--fire_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);    
+}
+.card#Dragon {
+  background-color: var(--dragon_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--dragon_secondary),        /* outer left magenta */
+  1px 0 8px var(--dragon_secondary);    
+}
+.card#DragonFlying {
+  background-color: var(--dragon_primary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);    
+}
+
+/*#endregion Card primary colors depending on type*/
 
 .card:hover {
   box-shadow:
@@ -209,6 +528,396 @@ li {
   -1px 0 8px #0ff,        /* outer left magenta */
   1px 0 8px #0ff;         /* outer right cyan */
 }
+
+/*#region Card hover depending on type*/
+
+.card#GrassPoison:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--poison_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--poison_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--poison_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--poison_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Fire:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--fire_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--fire_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--fire_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--fire_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fire_secondary),        /* outer left magenta */
+  1px 0 8px var(--fire_secondary);         /* outer right cyan */
+}
+.card#FireFlying:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--flying_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--flying_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--flying_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--flying_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#Water:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--water_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--water_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--water_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--water_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--water_secondary),        /* outer left magenta */
+  1px 0 8px var(--water_secondary);         /* outer right cyan */
+}
+.card#Bug:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--bug_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--bug_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--bug_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--bug_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--bug_secondary),        /* outer left magenta */
+  1px 0 8px var(--bug_secondary);         /* outer right cyan */
+}
+.card#BugFlying:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--flying_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--flying_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--flying_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--flying_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#BugPoison:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--poison_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--poison_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--poison_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--poison_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#NormalFlying:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--flying_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--flying_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--flying_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--flying_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#Normal:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--normal_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--normal_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--normal_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--normal_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--normal_secondary),        /* outer left magenta */
+  1px 0 8px var(--normal_secondary);         /* outer right cyan */
+}
+.card#Poison:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--poison_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--poison_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--poison_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--poison_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Electric:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--electric_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--electric_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--electric_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--electric_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--electric_secondary),        /* outer left magenta */
+  1px 0 8px var(--electric_secondary);         /* outer right cyan */
+}
+.card#Ground:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--ground_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--ground_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--ground_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--ground_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#PoisonGround:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--ground_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--ground_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--ground_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--ground_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#PoisonFlying:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--flying_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--flying_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--flying_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--flying_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#BugGrass:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--grass_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--grass_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--grass_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--grass_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--grass_secondary),        /* outer left magenta */
+  1px 0 8px var(--grass_secondary);         /* outer right cyan */
+}
+.card#Fighting:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--fighting_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--fighting_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--fighting_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--fighting_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fighting_secondary),        /* outer left magenta */
+  1px 0 8px var(--fighting_secondary);         /* outer right cyan */
+}
+.card#WaterFighting:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--fighting_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--fighting_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--fighting_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--fighting_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fighting_secondary),        /* outer left magenta */
+  1px 0 8px var(--fighting_secondary);         /* outer right cyan */
+}
+.card#Psychic:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--psychic_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--psychic_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--psychic_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--psychic_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#RockGround:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--ground_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--ground_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--ground_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--ground_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#WaterPoison:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--poison_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--poison_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--poison_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--poison_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#WaterPsychic:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--psychic_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--psychic_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--psychic_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--psychic_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#WaterIce:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--ice_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--ice_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--ice_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--ice_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ice_secondary),        /* outer left magenta */
+  1px 0 8px var(--ice_secondary);         /* outer right cyan */
+}
+.card#GhostPoison:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--poison_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--poison_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--poison_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--poison_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Rock:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--rock_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--rock_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--rock_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--rock_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--rock_secondary),        /* outer left magenta */
+  1px 0 8px var(--rock_secondary);         /* outer right cyan */
+}
+.card#GrassPsychic:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--psychic_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--psychic_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--psychic_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--psychic_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#GroundRock:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--rock_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--rock_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--rock_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--rock_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--rock_secondary),        /* outer left magenta */
+  1px 0 8px var(--rock_secondary);         /* outer right cyan */
+}
+.card#IcePsychic:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--psychic_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--psychic_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--psychic_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--psychic_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#Grass:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--grass_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--grass_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--grass_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--grass_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--grass_secondary),        /* outer left magenta */
+  1px 0 8px var(--grass_secondary);         /* outer right cyan */
+}
+.card#RockWater:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--water_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--water_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--water_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--water_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--water_secondary),        /* outer left magenta */
+  1px 0 8px var(--water_secondary);         /* outer right cyan */
+}
+.card#RockFlying:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--flying_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--flying_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--flying_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--flying_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#IceFlying:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--flying_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--flying_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--flying_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--flying_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#ElectricFlying:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--flying_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--flying_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--flying_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--flying_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#FireFlying:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--flying_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--flying_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--flying_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--flying_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#Dragon:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--dragon_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--dragon_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--dragon_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--dragon_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--dragon_secondary),        /* outer left magenta */
+  1px 0 8px var(--dragon_secondary);         /* outer right cyan */
+}
+.card#DragonFlying:hover {
+  box-shadow:
+  inset 0 0 10px #fff,      /* inner white */
+  inset 4px 0 16px var(--flying_secondary),   /* inner left magenta short */
+  inset -4px 0 16px var(--flying_secondary),  /* inner right cyan short */
+  inset 4px 0 60px var(--flying_secondary),  /* inner left magenta broad */
+  inset -4px 0 60px var(--flying_secondary), /* inner right cyan broad */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */ 
+}
+
+/*#endregion Card hover depending on type*/
 
 .card:after {
   content: '';
@@ -250,6 +959,302 @@ li {
   transform: translateY(-20px);
 }
 
+/*#region Card title section depending on type*/
+
+.card#GrassPoison h2 {
+  background: var(--poison_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Fire h2 {
+  background: var(--fire_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fire_secondary),        /* outer left magenta */
+  1px 0 8px var(--fire_secondary);         /* outer right cyan */
+}
+.card#FireFlying h2 {
+  background: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#Water h2 {
+  color: black;
+  background: var(--water_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--water_secondary),        /* outer left magenta */
+  1px 0 8px var(--water_secondary);         /* outer right cyan */
+}
+.card#Bug h2 {
+  color: black;
+  background: var(--bug_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--bug_secondary),        /* outer left magenta */
+  1px 0 8px var(--bug_secondary);         /* outer right cyan */
+}
+.card#BugFlying h2 {
+  background: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#BugPoison h2 {
+  background: var(--poison_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#NormalFlying h2 {
+  background: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#Normal h2 {
+  color: black;
+  background: var(--normal_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--normal_secondary),        /* outer left magenta */
+  1px 0 8px var(--normal_secondary);         /* outer right cyan */
+}
+.card#Poison h2 {
+  background: var(--poison_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Electric h2 {
+  color: black;
+  background: var(--electric_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--electric_secondary),        /* outer left magenta */
+  1px 0 8px var(--electric_secondary);         /* outer right cyan */
+}
+.card#Ground h2 {
+  background: var(--ground_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#PoisonGround h2 {
+  background: var(--ground_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#PoisonFlying h2 {
+  background: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#BugGrass h2 {
+  background: var(--grass_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--grass_secondary),        /* outer left magenta */
+  1px 0 8px var(--grass_secondary);         /* outer right cyan */
+}
+.card#Fighting h2 {
+  color: black;
+  background: var(--fighting_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fighting_secondary),        /* outer left magenta */
+  1px 0 8px var(--fighting_secondary);         /* outer right cyan */
+}
+.card#WaterFighting h2 {
+  color: black;
+  background: var(--fighting_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fighting_secondary),        /* outer left magenta */
+  1px 0 8px var(--fighting_secondary);         /* outer right cyan */
+}
+.card#Psychic h2 {
+  background: var(--psychic_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#RockGround h2 {
+  background: var(--ground_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#WaterPoison h2 {
+  background: var(--poison_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#WaterPsychic h2 {
+  background: var(--psychic_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#WaterIce h2 {
+  color: black;
+  background: var(--ice_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ice_secondary),        /* outer left magenta */
+  1px 0 8px var(--ice_secondary);         /* outer right cyan */
+}
+.card#GhostPoison h2 {
+  background: var(--poison_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Rock h2 {
+  color: black;
+  background: var(--rock_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--rock_secondary),        /* outer left magenta */
+  1px 0 8px var(--rock_secondary);         /* outer right cyan */
+}
+.card#GrassPsychic h2 {
+  background: var(--psychic_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#GroundRock h2 {
+  color: black;
+  background: var(--rock_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--rock_secondary),        /* outer left magenta */
+  1px 0 8px var(--rock_secondary);         /* outer right cyan */
+}
+.card#IcePsychic h2 {
+  background: var(--psychic_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#Grass h2 {
+  background: var(-grass_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--grass_secondary),        /* outer left magenta */
+  1px 0 8px var(--grass_secondary);         /* outer right cyan */
+}
+.card#RockWater h2 {
+  color: black;
+  background: var(--water_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--water_secondary),        /* outer left magenta */
+  1px 0 8px var(--water_secondary);         /* outer right cyan */
+}
+.card#RockFlying h2 {
+  background: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#IceFlying h2 {
+  background: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#ElectricFlying h2 {
+  background: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#FireFlying h2 {
+  background: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);    
+}
+.card#Dragon h2 {
+  color: black;
+  background: var(--dragon_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--dragon_secondary),        /* outer left magenta */
+  1px 0 8px var(--dragon_secondary);    
+}
+.card#DragonFlying h2 {
+  background: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);    
+}
+
+/*#endregion Card title section depending on type*/
+
 .card img {
   display: block;
   margin-left: auto;
@@ -258,7 +1263,7 @@ li {
   transform: translateY(-20px);
 }
 
-.description {
+.cardDescription {
   background-color: rgb(87, 1, 87);
   padding-bottom: 1px;
   margin-top: -20px;
@@ -268,8 +1273,340 @@ li {
   1px 0 8px #0ff;   
 }
 
-.description p {
-  padding-left: 20px;
+/*#region Card description section depending on type*/
+
+.card#GrassPoison .cardDescription {
+  background-color: var(--poison_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Fire .cardDescription {
+  background-color: var(--fire_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fire_secondary),        /* outer left magenta */
+  1px 0 8px var(--fire_secondary);         /* outer right cyan */
+}
+.card#FireFlying .cardDescription {
+  background-color: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#Water .cardDescription {
+  background-color: var(--water_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--water_secondary),        /* outer left magenta */
+  1px 0 8px var(--water_secondary);         /* outer right cyan */
+}
+
+.card#Water .cardDescription p {
+  color:black;
+}
+
+.card#Bug .cardDescription {
+  background-color: var(--bug_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--bug_secondary),        /* outer left magenta */
+  1px 0 8px var(--bug_secondary);         /* outer right cyan */
+}
+
+.card#Bug .cardDescription p {
+  color:black;
+}
+
+.card#BugFlying .cardDescription {
+  background-color: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#BugPoison .cardDescription {
+  background-color: var(--poison_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#NormalFlying .cardDescription {
+  background-color: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#Normal .cardDescription {
+  background-color: var(--normal_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--normal_secondary),        /* outer left magenta */
+  1px 0 8px var(--normal_secondary);         /* outer right cyan */
+}
+
+.card#Normal .cardDescription p {
+  color:black;
+}
+
+.card#Poison .cardDescription {
+  background-color: var(--poison_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Electric .cardDescription {
+  background-color: var(--electric_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--electric_secondary),        /* outer left magenta */
+  1px 0 8px var(--electric_secondary);         /* outer right cyan */
+}
+.card#Electric .cardDescription p {
+  color:black;
+}
+
+.card#Ground .cardDescription {
+  background-color: var(--ground_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#PoisonGround .cardDescription {
+  background-color: var(--ground_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#PoisonFlying .cardDescription {
+  background-color: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#BugGrass .cardDescription {
+  background-color: var(--grass_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--grass_secondary),        /* outer left magenta */
+  1px 0 8px var(--grass_secondary);         /* outer right cyan */
+}
+.card#Fighting .cardDescription {
+  background-color: var(--fighting_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fighting_secondary),        /* outer left magenta */
+  1px 0 8px var(--fighting_secondary);         /* outer right cyan */
+}
+.card#Fighting .cardDescription p {
+  color:black;
+}
+
+.card#WaterFighting .cardDescription {
+  background-color: var(--fighting_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--fighting_secondary),        /* outer left magenta */
+  1px 0 8px var(--fighting_secondary);         /* outer right cyan */
+}
+.card#WaterFighting .cardDescription p {
+  color:black;
+}
+
+.card#Psychic .cardDescription {
+  background-color: var(--psychic_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#RockGround .cardDescription {
+  background-color: var(--ground_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ground_secondary),        /* outer left magenta */
+  1px 0 8px var(--ground_secondary);         /* outer right cyan */
+}
+.card#WaterPoison .cardDescription {
+  background-color: var(--poison_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#WaterPsychic .cardDescription {
+  background-color: var(--psychic_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#WaterIce .cardDescription {
+  background-color: var(--ice_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--ice_secondary),        /* outer left magenta */
+  1px 0 8px var(--ice_secondary);         /* outer right cyan */
+}
+.card#WaterIce .cardDescription p {
+  color:black;
+}
+
+.card#GhostPoison .cardDescription {
+  background-color: var(--poison_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--poison_secondary),        /* outer left magenta */
+  1px 0 8px var(--poison_secondary);         /* outer right cyan */
+}
+.card#Rock .cardDescription {
+  background-color: var(--rock_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--rock_secondary),        /* outer left magenta */
+  1px 0 8px var(--rock_secondary);         /* outer right cyan */
+}
+.card#Rock .cardDescription p {
+  color:black;
+}
+
+.card#GrassPsychic .cardDescription {
+  background-color: var(--psychic_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#GroundRock .cardDescription {
+  background-color: var(--rock_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--rock_secondary),        /* outer left magenta */
+  1px 0 8px var(--rock_secondary);         /* outer right cyan */
+}
+.card#GroundRock .cardDescription p {
+  color:black;
+}
+
+.card#IcePsychic .cardDescription {
+  background-color: var(--psychic_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--psychic_secondary),        /* outer left magenta */
+  1px 0 8px var(--psychic_secondary);         /* outer right cyan */
+}
+.card#Grass .cardDescription {
+  background-color: var(-grass_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--grass_secondary),        /* outer left magenta */
+  1px 0 8px var(--grass_secondary);         /* outer right cyan */
+}
+.card#RockWater .cardDescription {
+  background-color: var(--water_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--water_secondary),        /* outer left magenta */
+  1px 0 8px var(--water_secondary);         /* outer right cyan */
+}
+.card#RockWater .cardDescription p {
+  color:black;
+}
+
+.card#RockFlying .cardDescription {
+  background-color: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#IceFlying .cardDescription {
+  background-color: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#ElectricFlying .cardDescription {
+  background-color: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);         /* outer right cyan */
+}
+.card#FireFlying .cardDescription {
+  background-color: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);    
+}
+.card#Dragon .cardDescription {
+  background-color: var(--dragon_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--dragon_secondary),        /* outer left magenta */
+  1px 0 8px var(--dragon_secondary);    
+}
+.card#Dragon .cardDescription p {
+  color:black;
+}
+
+.card#DragonFlying .cardDescription {
+  background-color: var(--flying_secondary);
+  box-shadow:
+  inset 0 0 5px #fff,      /* inner white */
+  0 0 5px #fff,            /* outer white */
+  -1px 0 8px var(--flying_secondary),        /* outer left magenta */
+  1px 0 8px var(--flying_secondary);    
+}
+
+/*#endregion Card description section depending on type*/
+
+.cardDescription p {
+  text-align: center;
   color: white;
   transform: translateY(5px);
 }
