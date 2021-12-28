@@ -1,25 +1,9 @@
-function PokemonAddForm()
-{
-    const task = (e) => {
-        alert('task');  
-        e.preventDefault();
-      }
-      
-    const cancel = (e) => {
-        alert('cancel');
-        e.preventDefault();
-      }
-
-    const Form = (
-        <form className = "addForm">
-            <label htmlFor="iNumber">Database Number:</label><br></br>
-            <input type="number" name="iNumber"></input><br></br>
-            <label htmlFor="iName">Pokemon Name:</label><br></br>
-            <input type="text" name="iName"></input><br></br>
-            <label htmlFor="iUrl">Image URL:</label><br></br>
-            <input type="text" name="iUrl"></input><br></br>
-            <label htmlFor="iTypes">Pokemon Type:</label><br></br>
-            <select name="iTypes">
+function PokemonFilterBar (props)
+{   
+    return (
+        <div className="custom-dropdown">
+            <select onChange={props.change} name="iTypes" id="filterBar">
+                <option value="All">All</option>
                 <option value="Fire">Fire</option>
                 <option value="Water">Water</option>
                 <option value="Bug">Bug</option>
@@ -56,13 +40,9 @@ function PokemonAddForm()
                 <option value="Electric Flying">Electric & Flying</option>
                 <option value="Fire Flying">Fire & Flying</option>
                 <option value="Dragon Flying">Water & Flying</option>
-            </select> <br></br><br></br>
-            <button onClick={task}>Add Pokemon!</button>
-            <button onClick={cancel}>Cancel</button>
-        </form>
+            </select>
+        </div>
     );
-
-    return Form;
 }
 
-export default PokemonAddForm;
+export default PokemonFilterBar;

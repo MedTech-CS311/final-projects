@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import PokemonButton,{addPokemon,editPokemon,deletePokemon} from './components/PokemonButton';
-import PokemonSearchBar from './components/PokemonSearchBar';
 import PokemonList from './components/PokemonList';
 import reportWebVitals from './reportWebVitals';
 
