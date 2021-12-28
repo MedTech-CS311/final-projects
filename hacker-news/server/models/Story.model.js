@@ -6,7 +6,7 @@ module.exports = mongoose.model("Story",
     id : Number,
     by : Object,
     title : String,
-    score : String,
+    score : Number,
   })
  );
     

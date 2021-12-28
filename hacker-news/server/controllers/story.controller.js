@@ -29,7 +29,40 @@ exports.create = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Tutorial."
+          err.message || "Some error occurred while creating the Story."
       });
     });
+};
+
+exports.getStories = (req,res) => {
+   
+  Story.find().sort({score:'desc'}).then(
+    data=>{
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while getting Stories."
+      })
+    }
+  )
+}
+
+// Retrieve all users from the database.
+exports.findTopTen = (req, res) => {
+  const UserName = req.query.UserName;
+  var condition = UserName ? { UserName: { [Op.like]: `%${UserName}%` } } : null;
+    
+  Story.find().sort({'by.karma':'desc'}).limit(10)
+      .then(data => {
+          res.send(data);
+        })
+      .catch(err => {
+          res.status(500).send({
+            message:
+              err.message || "Some error occurred while retrieving Data."
+          });
+      });
+  
 };

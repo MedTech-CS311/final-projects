@@ -8,22 +8,22 @@ const User = mongoose.model("User");
 exports.login = async (req, res) => {
     try {
         // Get user input
-        const { Email, Password } = req.body;
+        const { email, password } = req.body;
     
         // Validate user input
-        if (!(Email && Password)) {
+        if (!(email && password)) {
           res.status(400).send("All input is required");
         }
         // Validate if user exist in our database
-       const user = await User.findOne({Email : Email.toLowerCase()}).exec();
+       const user = await User.findOne({Email : email.toLowerCase()}).exec();
     
-        if (user && (await bcrypt.compare(Password, user.Password))) {
+        if (user && (await bcrypt.compare(password, user.Password))) {
           // Create token
           const token = jwt.sign(
-            { user_id: user.id, Email },
+            { user_id: user.id, email },
             process.env.TOKEN_KEY,
             {
-              expiresIn: "2h",
+              expiresIn: '1800s',
             }
           );
     
@@ -31,8 +31,8 @@ exports.login = async (req, res) => {
           user.token = token;
           
       // user
-      res.status(200).json(user)
-      console.log("You're in "+ user.UserName );
+      res.json({user,token});
+      console.log("You're in "+ user.Username );
     }else
     res.status(400).send("Invalid Credentials");
   } catch (err) {
@@ -45,34 +45,34 @@ exports.register = async (req, res) => {
     // Our register logic starts here
   try {
     // Get user input
-    const { UserName, Email, Password } = req.body;
+    const { username, email, password } = req.body;
 
     // Validate user input
-    if (!(Email && Password && UserName)) {
+    if (!(email && password && username)) {
       res.status(400).send("All input is required");
     }
 
     // check if user already exist
     // Validate if user exists in our database
-    const oldUser = await User.findOne({ Email : Email }).exec();
+    const oldUser = await User.findOne({ Email : email }).exec();
 
     if (oldUser) {
       return res.status(409).send("User Already Exist. Please Login");
     }
 
     //Encrypt user password
-    encryptedPassword = await bcrypt.hash(Password, 10);
+    encryptedPassword = await bcrypt.hash(password, 10);
 
     // Create user in our database
     const user = await User.create({
-        UserName,
-        Email: Email.toLowerCase(), // sanitize: convert email to lowercase
+        Username :username,
+        Email: email.toLowerCase(), // sanitize: convert email to lowercase
         Password: encryptedPassword,
       });
   
       // Create token
       const token = jwt.sign(
-        { user_id: user._id, Email },
+        { user_id: user._id, email },
         process.env.TOKEN_KEY,
         {
           expiresIn: "2h",

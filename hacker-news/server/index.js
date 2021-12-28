@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const auth = require("./middleware/auth");
+// const auth = require("./middleware/auth");
 require("dotenv").config();
 require("./db")
 const {API_PORT} = process.env;
@@ -9,7 +9,8 @@ const {API_PORT} = process.env;
 const app= express();
 const bodyParser = require("body-parser");
 var corsOptions = {
-    origin:"http://localhost:8081"
+    origin:"http://localhost:3000",
+
 };
 
 app.use(cors(corsOptions));
@@ -22,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // simple route
-app.get("/",auth, (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "Welcome to HackedNews." });
 });
 require("./routes/userCRUD.routes")(app);
