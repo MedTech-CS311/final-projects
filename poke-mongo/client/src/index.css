@@ -24,7 +24,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(128,175,114);
   background-image: url("../assets/backgsky.png");
-  
   background-repeat: no-repeat;
 }
 form {
@@ -32,6 +31,7 @@ form {
   font-family: 'Fira Mono', monospace;
   width: fit-content;
   position: absolute;
+  z-index: 1;
 }
 
 

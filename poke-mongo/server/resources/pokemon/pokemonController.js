@@ -1,28 +1,19 @@
 const Pokemon = require("./Pokemon");
-const fs = require("fs");
-const pokemons = JSON.parse(
-  fs.readFileSync(
-    "/Users/ASUS/Desktop/final-projects/poke-mongo/data/pokemon.json"
-  ),
-  "utf-8"
-);
 
 var InsertPokemons = (req, res) => {
   //Insert one pokemon
   //{
-  //const newPokemon = new Pokemon(req.body);
-  //newPokemon
-  //.save()
+  const newPokemon = new Pokemon(req.body);
+  newPokemon.save()
+  .then((newPokemon) => {
+    res.status(201).send(newPokemon);
+  })
+  .catch((error) => {
+    res.status(500).send(error);
+  });
   //}
   //Insert Many Pokemons
-  Pokemon.insertMany(pokemons)
-    .then((pokemons) => {
-      console.log(pokemons);
-      res.status(201).send(pokemons);
-    })
-    .catch((error) => {
-      res.status(500).send(error);
-    });
+  //Pokemon.insertMany(pokemons)
 };
 var FindAllPokemons = (req, res) => {
   Pokemon.find({})

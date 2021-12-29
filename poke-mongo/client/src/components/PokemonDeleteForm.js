@@ -1,11 +1,7 @@
 function PokemonDeleteForm(props)
 {   
-    const number = () => {
-        return(document.getElementById("deleteForm").elements["iNumber"].value)
-    }
     
     const task = (e) => {
-        console.log(number());
         e.preventDefault();
       }
 
@@ -13,14 +9,14 @@ function PokemonDeleteForm(props)
         props.cancel();
         e.preventDefault();
       }
-    const turnPositive = () =>{
-        var x = number();
-        if(x<0){document.getElementById("deleteForm").elements["iNumber"].value= x * -1}
+    const preventString = () =>{
+        var x = document.getElementById("deleteForm").elements["iNumber"].value;
+        if(x === "") {document.getElementById("deleteForm").elements["iNumber"].value = 0}
     }
     const Form = (
         <form id ="deleteForm">
          <label htmlFor="iNumber">Pokemon Number</label><br></br>
-         <input type="number" min='0' onKeyUp={turnPositive} name="iNumber"></input><br></br>
+         <input type="number" min='0' onKeyUp={preventString} name="iNumber"></input><br></br>
          <button onClick= {task}>Delete Pokemon!</button><button onClick= {cancel} >Cancel</button>
         </form>
         
