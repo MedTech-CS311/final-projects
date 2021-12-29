@@ -7,9 +7,10 @@
   src: url('../assets/Pixels.woff');
 }
 @font-face {
-  font-family: 'Crash Test Regular';
-  src: url('../assets/Crash\ Test\ Regular.woff');
+  font-family: 'Minecraft Regular';
+  src: url('../assets/Minecraft\ Regular.woff');
 }
+
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700');
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
@@ -156,7 +157,7 @@ code {
 
 #main_title {
   text-align: center;
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: 'Minecraft Regular';
   letter-spacing: 5px;
   font-size: 75px;
   margin-top: 30px;
