@@ -20,8 +20,38 @@ function PokemonEditForm(props)
         var x = document.getElementById("editForm").elements["iNumber"].value;
         if(x === "") {document.getElementById("editForm").elements["iNumber"].value = 1}
     }
+
+    async function updatePokemon(object)
+    {
+        const response = await fetch("http://localhost:8000/api/pokemon/" + object.number + "/",{
+            method: 'PUT',
+            body: JSON.stringify(object),
+            headers: {
+                'Content-Type': 'application/json'
+              }
+        });
+        const json = await response.json().catch(() => {return;});
+
+        if(json === undefined)
+        {
+            alert("Error: Pokemon with this number does not exist!");
+        }
+        else
+        {
+            alert("Success!"); // replace
+        }
+    }
+
     const task = (e) => {
-        console.log(esm());
+        var object = esm();
+        if(object === null)
+        {
+            alert("Error: Make sure you have filled the input fields properly!")
+        }
+        else
+        {
+            updatePokemon(object);
+        }
         e.preventDefault();
       }
 

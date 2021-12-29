@@ -1,6 +1,6 @@
 const Pokemon = require("./Pokemon");
 
-var InsertPokemons = (req, res) => {
+var InsertPokemon = (req, res) => {
   //Insert one pokemon
   //{
   const newPokemon = new Pokemon(req.body);
@@ -29,7 +29,6 @@ var DeleteAllPokemons = (req, res) => {
   Pokemon.find({})
     .deleteMany()
     .then((pokemons) => {
-      console.log(pokemons);
       res.status(200).send(pokemons);
     })
     .catch((error) => {
@@ -50,7 +49,6 @@ var FindByNumber = (req, res) => {
 var DeleteByNumber = (req, res) => {
   Pokemon.findOneAndDelete(req.params, { new: true })
     .then((pokemon) => {
-      console.log(pokemon);
       res.status(200).send(pokemon);
     })
     .catch((error) => {
@@ -68,7 +66,7 @@ var UpdateByNumber = (req, res) => {
     });
 };
 
-exports.InsertPokemons = InsertPokemons;
+exports.InsertPokemon = InsertPokemon;
 exports.FindAllPokemons = FindAllPokemons;
 exports.DeleteAllPokemons = DeleteAllPokemons;
 exports.FindByNumber = FindByNumber;

@@ -34,10 +34,10 @@ function PokemonAddForm(props)
 
         const json = await response.json();
         if ('types' in json){
-            alert('success' + JSON.stringify(json));
+            alert('Success!'); // replace
         }
         else
-        {   
+        {
             var keyPattern = json.keyPattern
             if ('number' in keyPattern){
                 alert('Error: Pokemon number already exists!')
@@ -56,7 +56,7 @@ function PokemonAddForm(props)
         var object = esm();
         if(object === null)
         {
-            alert("Error submitting pokemon. Make sure you have filled the input fields properly!")
+            alert("Error: Make sure you have filled the input fields properly!")
         }
         else
         {
