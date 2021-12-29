@@ -18,9 +18,6 @@ app.use(bodyParser())
 
 
 
-
-
-
 app.listen(8000, () => {
     console.log("started listening for resquests on port 8000");
 })
