@@ -9,6 +9,7 @@
   ),
   "utf-8"
 );
+
 const getCount = async () => {
    const count = await mongoose.connection.db.collection('pokemons').countDocuments()
    .then(res => {return res});

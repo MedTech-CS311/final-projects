@@ -1,11 +1,4 @@
 const Pokemon = require("./Pokemon");
-const fs = require("fs");
-const pokemons = JSON.parse(
-  fs.readFileSync(
-    "/Users/OMENi7/Desktop/Final/final-projects/poke-mongo/data/pokemon.json"
-  ),
-  "utf-8"
-);
 
 var InsertPokemon = (req, res) => {
   //Insert one pokemon
@@ -36,7 +29,6 @@ var DeleteAllPokemons = (req, res) => {
   Pokemon.find({})
     .deleteMany()
     .then((pokemons) => {
-      console.log(pokemons);
       res.status(200).send(pokemons);
     })
     .catch((error) => {
@@ -57,7 +49,6 @@ var FindByNumber = (req, res) => {
 var DeleteByNumber = (req, res) => {
   Pokemon.findOneAndDelete(req.params, { new: true })
     .then((pokemon) => {
-      console.log(pokemon);
       res.status(200).send(pokemon);
     })
     .catch((error) => {
