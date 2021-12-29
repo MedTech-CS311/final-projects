@@ -5,7 +5,7 @@ var controller = require("./pokemonController");
 
 var router = express.Router();
 
-router.post("/", controller.InsertPokemons);
+router.post("/", controller.InsertPokemon);
 
 router.get("/", controller.FindAllPokemons);
 

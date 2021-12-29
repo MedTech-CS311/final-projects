@@ -1,6 +1,6 @@
 const Pokemon = require("./Pokemon");
 
-var InsertPokemons = (req, res) => {
+var InsertPokemon = (req, res) => {
   //Insert one pokemon
   //{
   const newPokemon = new Pokemon(req.body);
@@ -68,7 +68,7 @@ var UpdateByNumber = (req, res) => {
     });
 };
 
-exports.InsertPokemons = InsertPokemons;
+exports.InsertPokemon = InsertPokemon;
 exports.FindAllPokemons = FindAllPokemons;
 exports.DeleteAllPokemons = DeleteAllPokemons;
 exports.FindByNumber = FindByNumber;

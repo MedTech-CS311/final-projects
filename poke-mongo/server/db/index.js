@@ -12,7 +12,7 @@
 const getCount = async () => {
    const count = await mongoose.connection.db.collection('pokemons').countDocuments()
    .then(res => {return res});
-   if ( count === 0)
+   if (count === 0)
    {
      Pokemon.insertMany(pokemons);
      console.log("Database was empty. Added initial db of pokemons");
