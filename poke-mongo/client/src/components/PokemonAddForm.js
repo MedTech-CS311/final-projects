@@ -16,7 +16,10 @@ function PokemonAddForm()
         }
        return formDataHolder 
     }
-
+    const turnPositive = () =>{
+        var x = document.getElementById("addForm").elements["iNumber"].value;
+        if(x<0){document.getElementById("addForm").elements["iNumber"].value= x * -1}
+    }
     const task = (e) => {
         console.log(esm()); //Replace by post request
         e.preventDefault();
@@ -33,13 +36,13 @@ function PokemonAddForm()
 
     const Form = (
         <form id = "addForm">
-            <label htmlFor="iNumber">Database Number:</label><br></br>
-            <input type="number" name="iNumber"></input><br></br>
-            <label htmlFor="iName">Pokemon Name:</label><br></br>
+            <label htmlFor="iNumber">Pokemon Number</label><br></br>
+            <input type="number" min='0' onKeyUp={turnPositive} name="iNumber"></input><br></br>
+            <label htmlFor="iName">Pokemon Name</label><br></br>
             <input type="text" name="iName"></input><br></br>
-            <label htmlFor="iUrl">Image URL:</label><br></br>
+            <label htmlFor="iUrl">Image URL</label><br></br>
             <input type="text" name="iUrl"></input><br></br>
-            <label htmlFor="iTypes">Pokemon Type:</label><br></br>
+            <label htmlFor="iTypes">Pokemon Type</label><br></br>
             <select name="iTypes">
                 <option value="Fire">Fire</option>
                 <option value="Water">Water</option>

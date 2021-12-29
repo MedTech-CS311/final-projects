@@ -6,6 +6,7 @@ import PokemonList from './components/PokemonList';
 import PokemonAddForm from './components/PokemonAddForm';
 import reportWebVitals from './reportWebVitals';
 import PokemonEditForm from './components/PokemonEditForm';
+import PokemonDeleteForm from './components/PokemonDeleteForm';
 
 
 
@@ -13,7 +14,8 @@ ReactDOM.render(
   <React.StrictMode>
     <div id="main_container">
       <h1 id="main_title">X POKE-MONGO X</h1>
-      
+      <PokemonDeleteForm/>
+      <PokemonAddForm/>
       <PokemonButton title = {addPokemon}/>
       <PokemonButton title = {editPokemon}/>
       <PokemonButton title = {deletePokemon}/>

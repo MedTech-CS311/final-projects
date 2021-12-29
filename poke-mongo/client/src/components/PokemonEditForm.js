@@ -1,7 +1,27 @@
 function PokemonEditForm()
-{
+{   
+    const check = (v) => {return((v === "") ? null:v);}
+    const esm = () => {
+        var  number = check(document.getElementById("editForm").elements["iNumber"].value);
+        if (number === null) return null ;
+        var  name = check(document.getElementById("editForm").elements["iName"].value);
+        if (name === null) return null ;
+        var imageUrl= check(document.getElementById("editForm").elements["iUrl"].value);
+        if(imageUrl ===null ) return null ;
+        const formDataHolder = {
+            number: number,
+            name: name,
+            types: document.getElementById("editForm").elements["iTypes"].value.split(" "),
+            imageUrl: imageUrl
+        }
+       return formDataHolder 
+    }
+    const turnPositive = () =>{
+        var x = document.getElementById("editForm").elements["iNumber"].value;
+        if(x<0){document.getElementById("editForm").elements["iNumber"].value= x * -1}
+    }
     const task = (e) => {
-        alert('task');
+        console.log(esm());
         e.preventDefault();
       }
 
@@ -10,13 +30,13 @@ function PokemonEditForm()
         e.preventDefault();
       }
     const Form = (
-        <form className ='editForm'>
-        <label htmlFor = "PokemonID">Pokemon Number</label><br></br>
-        <input type= 'number' name = 'PokemonID'></input><br></br>
+        <form id ='editForm'>
+        <label htmlFor = "iNumber">Pokemon Number</label><br></br>
+        <input type= 'number' min='0' onKeyUp={turnPositive} name = 'iNumber'></input><br></br>
         <h3>New Info:</h3><br></br>
-        <label htmlFor = "newName">Pokemon Name</label><br></br>
-        <input type='text' name ='newPokemonName'></input><br></br>
-        <label htmlFor = 'newType'>Pokemon Type</label><br></br>
+        <label htmlFor = "iName">Pokemon Name</label><br></br>
+        <input type='text' name ='iName'></input><br></br>
+        <label htmlFor = 'iTypes'>Pokemon Type</label><br></br>
             <select name="iTypes">
                 <option value="Fire">Fire</option>
                 <option value="Water">Water</option>
@@ -55,8 +75,8 @@ function PokemonEditForm()
                 <option value="Fire Flying">Fire & Flying</option>
                 <option value="Dragon Flying">Water & Flying</option>
             </select> <br></br><br></br>
-        <label htmlFor = 'newImage'>Pokemon Image</label><br></br>
-        <input type='url' name="newPokemonImage"></input><br></br>
+        <label htmlFor = 'iUrl'>Pokemon Image</label><br></br>
+        <input type='url' name="iUrl"></input><br></br>
         <button onClick= {task}>Edit Pokemon!</button><button onClick= {cancel} >Cancel</button>
         </form>
     );
