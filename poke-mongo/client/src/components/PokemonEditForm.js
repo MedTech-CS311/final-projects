@@ -31,9 +31,12 @@ function PokemonEditForm(props)
       }
     const Form = (
         <form id ='editForm'>
+        <span className='cancelButton'></span>
+        <button onClick={cancel}>X</button>
+        <br></br><br></br>
         <label htmlFor="iNumber">◓Pokemon Number◓</label><br></br>
-        <input type= 'number' min='1' onKeyUp={preventString} name = 'iNumber'></input><br></br>
-        <h4>New Info:</h4>
+        <input type= 'number' min='1' onKeyUp={preventString} name = 'iNumber'></input>
+        <h4>____|New Info|____</h4>
         <label htmlFor = "iName">◓Pokemon Name◓</label><br></br>
         <input type='text' name ='iName'></input><br></br>
         <label htmlFor = 'iTypes'>◓Pokemon Type◓</label><br></br>
@@ -77,7 +80,7 @@ function PokemonEditForm(props)
             </select> <br></br><br></br>
         <label htmlFor = 'iUrl'>Pokemon Image</label><br></br>
         <input type='url' name="iUrl"></input><br></br>
-        <button onClick= {task}>Edit Pokemon!</button><button onClick= {cancel} >Cancel</button>
+        <button onClick= {task}>Edit Pokemon!</button>
         </form>
     );
     return Form;

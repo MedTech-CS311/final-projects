@@ -28,25 +28,52 @@ body {
   background-repeat: no-repeat;
 }
 form {
-  background-image: url('../assets/formBackg.png');
-  background-repeat:repeat-y;
+  background-image: url('../assets/formBackg.jpg');
+  
+  background-size: contain;
   overflow:hidden;
-  height: 400px;
+  height: 420px;
   width: 300px;
   font-family: 'Fira Mono', monospace;
   border-radius: 25px;
   position: absolute;
   transform: translateX(400px);
   z-index: 1;
-  text-align: left;
-  padding-left: 85px;
+  text-align: center;
+  
+  padding-top: 65px;  
 }
 
+.cancelButton {
+  margin-left: 240px;
+  
 
-
-
-
-
+}
+form input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: black;
+  color: red;
+  text-align: center;
+}
+form select {
+  text-align: center;
+  background-color:white;
+  border-style:solid;
+  border-color:black;
+  color: red;
+  font-size: 15px;
+  font:bold;
+  padding-left: 0.61rem;
+  padding-right: 0.61rem;
+  
+  
+}
+form h4 {
+  line-height: 0px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

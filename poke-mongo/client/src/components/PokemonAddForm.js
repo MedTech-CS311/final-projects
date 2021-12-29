@@ -76,6 +76,9 @@ function PokemonAddForm(props)
 
     const Form = (
         <form id = "addForm">
+            <span className='cancelButton'></span>
+            <button onClick={cancel}>X</button>
+            <br></br><br></br>
             <label htmlFor="iNumber">◓Pokemon Number◓</label><br></br>
             <input type="number" min='1' onKeyUp={preventString} name="iNumber"></input><br></br>
             <label htmlFor="iName">◓Pokemon Name◓</label><br></br>
@@ -120,9 +123,8 @@ function PokemonAddForm(props)
                 <option value="Electric Flying">Electric & Flying</option>
                 <option value="Fire Flying">Fire & Flying</option>
                 <option value="Dragon Flying">Water & Flying</option>
-            </select> <br></br><br></br>
+            </select> <br></br><br></br><br></br>
             <button onClick={task}>Add Pokemon!</button>
-            <button onClick={cancel}>Cancel</button>
         </form>
     );
 
