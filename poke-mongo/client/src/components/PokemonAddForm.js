@@ -1,7 +1,19 @@
 function PokemonAddForm()
 {
+
+    const esm = () => {
+
+        const formDataHolder = {
+            number: document.getElementById("addForm").elements["iNumber"].value,
+            name: document.getElementById("addForm").elements["iName"].value,
+            types: document.getElementById("addForm").elements["iTypes"].value.split(" "),
+            imageUrl: document.getElementById("addForm").elements["iUrl"].value
+        }
+       return formDataHolder 
+    }
+
     const task = (e) => {
-        alert('task');  
+        alert(JSON.stringify(esm()));
         e.preventDefault();
       }
       
@@ -9,9 +21,13 @@ function PokemonAddForm()
         alert('cancel');
         e.preventDefault();
       }
+    
+    /*const prevent = (e) => {
+        e.preventDefault();
+    }*/
 
     const Form = (
-        <form className = "addForm">
+        <form id = "addForm">
             <label htmlFor="iNumber">Database Number:</label><br></br>
             <input type="number" name="iNumber"></input><br></br>
             <label htmlFor="iName">Pokemon Name:</label><br></br>
