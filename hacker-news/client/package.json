@@ -1,7 +1,7 @@
 {
-  "name": "material-kit-react",
+  "name": "Hacked News",
   "version": "1.10.0",
-  "description": "Material Kit React. Coded by Creative Tim",
+  "description": "Hacked news, project work",
   "private": true,
   "main": "src/index.js",
   "dependencies": {
