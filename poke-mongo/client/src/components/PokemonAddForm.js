@@ -1,4 +1,4 @@
-function PokemonAddForm()
+function PokemonAddForm(props)
 {  
     const check = (v) => {return((v === "") ? null:v);}
     const esm = () => {
@@ -16,9 +16,9 @@ function PokemonAddForm()
         }
        return formDataHolder 
     }
-    const turnPositive = () =>{
+    const preventString = () =>{
         var x = document.getElementById("addForm").elements["iNumber"].value;
-        if(x<0){document.getElementById("addForm").elements["iNumber"].value= x * -1}
+        if(x === "") {document.getElementById("addForm").elements["iNumber"].value = 0}
     }
     const task = (e) => {
         console.log(esm()); //Replace by post request
@@ -26,7 +26,7 @@ function PokemonAddForm()
       }
       
     const cancel = (e) => {
-        alert('cancel');
+        props.cancel();
         e.preventDefault();
       }
     
@@ -37,7 +37,7 @@ function PokemonAddForm()
     const Form = (
         <form id = "addForm">
             <label htmlFor="iNumber">Pokemon Number</label><br></br>
-            <input type="number" min='0' onKeyUp={turnPositive} name="iNumber"></input><br></br>
+            <input type="number" min='0' onKeyUp={preventString} name="iNumber"></input><br></br>
             <label htmlFor="iName">Pokemon Name</label><br></br>
             <input type="text" name="iName"></input><br></br>
             <label htmlFor="iUrl">Image URL</label><br></br>

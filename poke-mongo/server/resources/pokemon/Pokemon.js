@@ -5,7 +5,7 @@ const Pokemon = mongoose.model('Pokemon', {
     number:{type: Number, unique:true},
     name: {type:String, unique:true},
     types: Array,
-    imageUrl:String
+    imageUrl:{type:String, unique:true}
 });
 
 module.exports = Pokemon;
