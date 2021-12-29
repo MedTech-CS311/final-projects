@@ -18,7 +18,7 @@ function PokemonEditForm(props)
     }
     const preventString = () =>{
         var x = document.getElementById("editForm").elements["iNumber"].value;
-        if(x === "") {document.getElementById("editForm").elements["iNumber"].value = 0}
+        if(x === "") {document.getElementById("editForm").elements["iNumber"].value = 1}
     }
     const task = (e) => {
         console.log(esm());
@@ -31,12 +31,12 @@ function PokemonEditForm(props)
       }
     const Form = (
         <form id ='editForm'>
-        <h3>Pokemon Number:</h3>
-        <input type= 'number' min='0' onKeyUp={preventString} name = 'iNumber'></input><br></br>
-        <h3>New Info:</h3><br></br>
-        <label htmlFor = "iName">Pokemon Name</label><br></br>
+        <label htmlFor="iNumber">◓Pokemon Number◓</label><br></br>
+        <input type= 'number' min='1' onKeyUp={preventString} name = 'iNumber'></input><br></br>
+        <h4>New Info:</h4>
+        <label htmlFor = "iName">◓Pokemon Name◓</label><br></br>
         <input type='text' name ='iName'></input><br></br>
-        <label htmlFor = 'iTypes'>Pokemon Type</label><br></br>
+        <label htmlFor = 'iTypes'>◓Pokemon Type◓</label><br></br>
             <select name="iTypes">
                 <option value="Fire">Fire</option>
                 <option value="Water">Water</option>
