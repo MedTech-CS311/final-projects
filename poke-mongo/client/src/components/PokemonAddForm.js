@@ -1,24 +1,32 @@
-function PokemonAddForm()
-{
-
+function PokemonAddForm(props)
+{  
+    const check = (v) => {return((v === "") ? null:v);}
     const esm = () => {
-
+        var  number = check(document.getElementById("addForm").elements["iNumber"].value);
+        if (number === null) return null ;
+        var  name = check(document.getElementById("addForm").elements["iName"].value);
+        if (name === null) return null ;
+        var imageUrl= check(document.getElementById("addForm").elements["iUrl"].value);
+        if(imageUrl ===null ) return null ;
         const formDataHolder = {
-            number: document.getElementById("addForm").elements["iNumber"].value,
-            name: document.getElementById("addForm").elements["iName"].value,
+            number: number,
+            name: name,
             types: document.getElementById("addForm").elements["iTypes"].value.split(" "),
-            imageUrl: document.getElementById("addForm").elements["iUrl"].value
+            imageUrl: imageUrl
         }
        return formDataHolder 
     }
-
+    const turnPositive = () =>{
+        var x = document.getElementById("addForm").elements["iNumber"].value;
+        if(x<0){document.getElementById("addForm").elements["iNumber"].value= x * -1}
+    }
     const task = (e) => {
-        alert(JSON.stringify(esm()));
+        console.log(esm()); //Replace by post request
         e.preventDefault();
       }
       
     const cancel = (e) => {
-        alert('cancel');
+        props.cancel();
         e.preventDefault();
       }
     
@@ -28,13 +36,13 @@ function PokemonAddForm()
 
     const Form = (
         <form id = "addForm">
-            <label htmlFor="iNumber">Database Number:</label><br></br>
-            <input type="number" name="iNumber"></input><br></br>
-            <label htmlFor="iName">Pokemon Name:</label><br></br>
+            <label htmlFor="iNumber">Pokemon Number</label><br></br>
+            <input type="number" min='0' onKeyUp={turnPositive} name="iNumber"></input><br></br>
+            <label htmlFor="iName">Pokemon Name</label><br></br>
             <input type="text" name="iName"></input><br></br>
-            <label htmlFor="iUrl">Image URL:</label><br></br>
+            <label htmlFor="iUrl">Image URL</label><br></br>
             <input type="text" name="iUrl"></input><br></br>
-            <label htmlFor="iTypes">Pokemon Type:</label><br></br>
+            <label htmlFor="iTypes">Pokemon Type</label><br></br>
             <select name="iTypes">
                 <option value="Fire">Fire</option>
                 <option value="Water">Water</option>
