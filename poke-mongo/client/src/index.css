@@ -101,8 +101,15 @@ code {
   padding-right: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
-  
+  filter: brightness(100%)
 }
+#taskButton:hover {
+  filter: brightness(130%);
+}
+#taskButton:active {
+  filter: brightness(70%)
+}
+
 
 .pokeButt {
   display: inline-block;
