@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import PokemonButton,{addPokemon,editPokemon,deletePokemon} from './components/PokemonButton';
 import PokemonList from './components/PokemonList';
 import reportWebVitals from './reportWebVitals';
 
@@ -11,9 +10,6 @@ ReactDOM.render(
   <React.StrictMode>
     <div id="main_container">
       <h1 id="main_title">◓ POKE-MONGO ◓</h1>
-      <PokemonButton title = {addPokemon}/>
-      <PokemonButton title = {editPokemon}/>
-      <PokemonButton title = {deletePokemon}/>
       <PokemonList/>
     </div>
   </React.StrictMode>,

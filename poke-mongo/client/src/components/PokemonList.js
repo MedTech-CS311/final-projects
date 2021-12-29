@@ -1,9 +1,7 @@
 import React from "react";
 import PokemonCard from "./PokemonCard";
 import PokemonFilterBar from "./PokemonFilterBar";
-
-var testList = [{name:"name", imageUrl:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png"
-, types: ["lol", "yes"], number: "500"}];
+import PokemonButton,{addPokemon,editPokemon,deletePokemon} from './PokemonButton'
 
 const compareArrays = (a,b) =>
 {
@@ -23,7 +21,7 @@ function PokemonList()
     const getCurrentList = () => {
         fetch("http://localhost:8000/api/pokemon/")
         .then(res => {return res.json();})
-        .then(json => {setData(json); setInitialData(json);
+        .then(json => {setInitialData(json);
         });  
     }
 
@@ -31,7 +29,7 @@ function PokemonList()
         var v = document.getElementById("filterBar").value;
         if(v==="All")
         {
-            getCurrentList();
+            setData(initialData);
         }
         else
         {
@@ -50,6 +48,7 @@ function PokemonList()
     }
 
     React.useEffect(() => {getCurrentList();}, []); 
+    React.useEffect(filterList, [initialData]);
 
     const showList = data.map((card) => {
         return (<li>
@@ -60,6 +59,9 @@ function PokemonList()
 
     return (
             <>
+                <PokemonButton title = {addPokemon} update = {getCurrentList}/>
+                <PokemonButton title = {editPokemon} update = {getCurrentList}/>
+                <PokemonButton title = {deletePokemon} update = {getCurrentList}/>
                 <PokemonFilterBar change= {filterList}/>
                 <div className="list">
                    {showList}

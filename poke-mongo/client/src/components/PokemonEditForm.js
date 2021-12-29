@@ -38,11 +38,12 @@ function PokemonEditForm(props)
         }
         else
         {
-            alert("Success!"); // replace
+            props.update(); // replace
         }
     }
 
     const task = (e) => {
+        e.preventDefault();
         var object = esm();
         if(object === null)
         {
@@ -52,12 +53,11 @@ function PokemonEditForm(props)
         {
             updatePokemon(object);
         }
-        e.preventDefault();
       }
 
     const cancel = (e) => {
-        props.cancel();
         e.preventDefault();
+        props.cancel();
       }
     const Form = (
         <form id ='editForm'>
