@@ -22,9 +22,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
-  background-image: url("../assets/background_image.jpg");
+  background-color: rgb(128,175,114);
+  background-image: url("../assets/backgsky.png");
+  
+  background-repeat: no-repeat;
 }
+form {
+  background-color: #0ff;
+  font-family: 'Fira Mono', monospace;
+  width: fit-content;
+
+  
+  
+  
+  
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -139,30 +152,12 @@ code {
   -webkit-appearance: button; /* hide default arrow in chrome OSX */
 }
 
-.custom-dropdown::before,
-.custom-dropdown::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-}
 
-.custom-dropdown::after { /*  Custom dropdown arrow */
-  content: "\25BC";
-  height: 1em;
-  font-size: .625em;
-  line-height: 1;
-  right: 1.2em;
-  top: 50%;
-  margin-top: -.5em;
-}
 
-.custom-dropdown::before { /*  Custom dropdown arrow cover */
-  width: 2em;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  border-radius: 0 3px 3px 0;
-}
+
+
+
+
 
 #main_title {
   text-align: center;

@@ -1,19 +1,24 @@
 function PokemonAddForm()
-{
-
+{  
+    const check = (v) => {return((v === "") ? null:v);}
     const esm = () => {
-
+        var  number = check(document.getElementById("addForm").elements["iNumber"].value);
+        if (number === null) return null ;
+        var  name = check(document.getElementById("addForm").elements["iName"].value);
+        if (name === null) return null ;
+        var imageUrl= check(document.getElementById("addForm").elements["iUrl"].value);
+        if(imageUrl ===null ) return null ;
         const formDataHolder = {
-            number: document.getElementById("addForm").elements["iNumber"].value,
-            name: document.getElementById("addForm").elements["iName"].value,
+            number: number,
+            name: name,
             types: document.getElementById("addForm").elements["iTypes"].value.split(" "),
-            imageUrl: document.getElementById("addForm").elements["iUrl"].value
+            imageUrl: imageUrl
         }
        return formDataHolder 
     }
 
     const task = (e) => {
-        alert(JSON.stringify(esm()));
+        console.log(esm()); //Replace by post request
         e.preventDefault();
       }
       
