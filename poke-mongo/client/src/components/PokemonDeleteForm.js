@@ -44,14 +44,18 @@ function PokemonDeleteForm(props)
     const Form = (
         <form id ="deleteForm">
         <span className='cancelButton'></span>
-        <button onClick={cancel}>X</button>
-        <br></br><br></br><br></br><br></br><br></br><br></br>
+        <button id='cancelButton' onClick={cancel}>X</button>
+        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
          <label htmlFor="iNumber">◓Pokemon Number◓</label><br></br>
-         <input type="number" min='1' onKeyUp={preventString} name="iNumber"></input><br></br>
-         <button onClick= {task}>Delete Pokemon!</button>
+         <input type="number" min='1' onKeyUp={preventString} name="iNumber"></input><br></br><br></br><br></br>
+         <button id='taskButton' onClick= {task}>Delete Pokemon!</button>
         </form>
         
     );
-    return Form;
+    return (
+      <div id='formContainer'>
+          {Form}
+      </div>
+    ) ;
 }
 export default PokemonDeleteForm;
