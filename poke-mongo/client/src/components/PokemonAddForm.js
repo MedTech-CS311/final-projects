@@ -20,8 +20,32 @@ function PokemonAddForm(props)
         var x = document.getElementById("addForm").elements["iNumber"].value;
         if(x === "") {document.getElementById("addForm").elements["iNumber"].value = 1}
     }
+
+    async function postPokemon(object)
+    {
+        const response = await fetch("http://localhost:8000/api/pokemon/", 
+        {
+            method: 'POST',
+            body: JSON.stringify(object),
+            headers: {
+                'Content-Type': 'application/json'
+              }
+        });
+
+        const json = await response.json();
+        console.log(json);
+    }
+
     const task = (e) => {
-        console.log(esm()); //Replace by post request
+        var object = esm();
+        if(object === null)
+        {
+            alert("Error submitting pokemon. Make sure you have filled the input fields properly!")
+        }
+        else
+        {
+            postPokemon(object);
+        }
         e.preventDefault();
       }
       
