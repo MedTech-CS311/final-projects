@@ -12,7 +12,6 @@ ReactDOM.render(
   <React.StrictMode>
     <div id="main_container">
       <h1 id="main_title">X POKE-MONGO X</h1>
-      <PokemonAddForm></PokemonAddForm>
       <PokemonButton title = {addPokemon}/>
       <PokemonButton title = {editPokemon}/>
       <PokemonButton title = {deletePokemon}/>
