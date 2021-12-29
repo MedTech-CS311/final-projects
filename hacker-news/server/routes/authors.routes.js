@@ -44,4 +44,15 @@ router.get("/api/author", (req, res) => {
   });
 });
 
+// router.post("/search", async (req, res) => {
+//   const author = req.body;
+//   Author.find({ id: "andrewnc" }, (err, result) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.json(result);
+//     }
+//   });
+// });
+
 module.exports = router;
