@@ -34,7 +34,7 @@ function PokemonAddForm(props)
 
         const json = await response.json();
         if ('types' in json){
-            alert('Success!'); // replace
+            props.update(); // replace
         }
         else
         {
@@ -53,6 +53,7 @@ function PokemonAddForm(props)
     }
 
     const task = (e) => {
+        e.preventDefault();
         var object = esm();
         if(object === null)
         {
@@ -62,12 +63,11 @@ function PokemonAddForm(props)
         {
             postPokemon(object);
         }
-        e.preventDefault();
       }
       
     const cancel = (e) => {
-        props.cancel();
         e.preventDefault();
+        props.cancel();
       }
     
     /*const prevent = (e) => {

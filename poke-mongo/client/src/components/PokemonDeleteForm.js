@@ -1,13 +1,13 @@
 function PokemonDeleteForm(props)
 {
     const task = (e) => {
-        deletePokemon();
         e.preventDefault();
+        deletePokemon();
       }
 
     const cancel = (e) => {
-        props.cancel();
         e.preventDefault();
+        props.cancel();
       }
 
     const preventString = () =>{
@@ -36,7 +36,7 @@ function PokemonDeleteForm(props)
             }
             else
             {
-                alert("Success!"); // replace
+                props.update(); // replace
             }
         }
     }

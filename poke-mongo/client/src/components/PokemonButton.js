@@ -25,17 +25,17 @@ function PokemonButton (props){
     {
         case addPokemon:
             form = (
-                <PokemonAddForm cancel={cancel}/>
+                <PokemonAddForm cancel={cancel} update={props.update}/>
             );
             break;
         case editPokemon:
             form = (
-                <PokemonEditForm cancel={cancel}/>
+                <PokemonEditForm cancel={cancel} update={props.update}/>
             );
             break;
         case deletePokemon:
             form = (
-                <PokemonDeleteForm cancel={cancel}/>
+                <PokemonDeleteForm cancel={cancel} update={props.update}/>
             );
             break;
         default:
