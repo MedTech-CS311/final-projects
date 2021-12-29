@@ -28,7 +28,6 @@ body {
   background-repeat: no-repeat;
 }
 form {
-  
   background-image: url('../assets/formBackg.png');
   background-repeat:repeat-y;
   overflow:hidden;
@@ -42,6 +41,7 @@ form {
   text-align: left;
   padding-left: 85px;
 }
+
 
 
 

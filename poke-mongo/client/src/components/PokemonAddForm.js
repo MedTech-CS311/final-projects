@@ -33,7 +33,23 @@ function PokemonAddForm(props)
         });
 
         const json = await response.json();
-        console.log(json);
+        if ('types' in json){
+            alert('success' + JSON.stringify(json));
+        }
+        else
+        {   
+            var keyPattern = json.keyPattern
+            if ('number' in keyPattern){
+                alert('Error: Pokemon number already exists!')
+            }
+            if ('name' in keyPattern){
+                alert('Error: Pokemon name already exists!')
+            }
+            if ('imageUrl' in keyPattern){
+                alert('Error: Really ?')
+            }
+            
+        }
     }
 
     const task = (e) => {
