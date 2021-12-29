@@ -115,7 +115,7 @@ console.log(password);
         absolute
         color="transparent"
         brand="Hacked News"
-        rightLinks={<HeaderLinks />}
+        // rightLinks={<HeaderLinks />}
         {...rest}
       />
       <div

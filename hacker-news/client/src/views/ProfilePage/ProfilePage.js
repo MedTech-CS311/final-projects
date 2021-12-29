@@ -184,7 +184,7 @@ export default function ProfilePage(props) {
                     <img src={client} alt="..." className={imageClasses} />
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}>{user.Username}</h3>
+                    <h3 className={classes.title} style={{color : 'whitesmoke'}}>{user.Username}</h3>
                     <h6>MEDIA</h6>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
@@ -200,11 +200,11 @@ export default function ProfilePage(props) {
               </GridItem>
             </GridContainer>
             <div className={classes.container}>
-          <GridContainer justify="center">
+          <GridContainer  justify="center">
             <GridItem  xs={12} sm={12} md={6}>
-              <Card >
+              <Card style={{background : 'black'}} >
             <form className={classes.form} onSubmit={update} ref={form}>
-            <CardBody>
+            <CardBody >
                     <Grid container spacing={5}>
                       <Grid item xs={12}>
                         <CustomInput
