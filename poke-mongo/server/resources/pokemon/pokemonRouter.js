@@ -2,7 +2,7 @@ const express=require("express");
 const pokemonRouter = express.Router()
 const Pokemon = require("./Pokemon");
 
-
+const pokemonController =require("./pokemonController")
 const bodyParser= require("body-parser");
 
 pokemonRouter.use(bodyParser()) 
