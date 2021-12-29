@@ -17,6 +17,9 @@ const storySchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  kids: {
+    type: Array,
+  },
 });
 
 const Story = mongoose.model("Story", storySchema);

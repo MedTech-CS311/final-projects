@@ -14,24 +14,37 @@ export default function Authors() {
       <div>
         <h1>Hacked News</h1>
         <h5>Top 10 Authors</h5>
-
-        <div className="aParent">
-          <span className="title">name</span>
-          {listOfAuthors.map((user) => {
-            return <p>{user.id}</p>;
-          })}
-        </div>
-        <div className="aParent">
-          <span className="author">karma</span>
-          {listOfAuthors.map((user) => {
-            return <p>{user.karma}</p>;
-          })}
-        </div>
-        <div className="aParent">
-          <span className="author">about</span>
-          {listOfAuthors.map((user) => {
-            return <p>{user.about}</p>;
-          })}
+        <div className="row">
+          <div className="aParent">
+            <span className="title">name</span>
+            {listOfAuthors.map((user) => {
+              return (
+                <div>
+                  <p>name: {user._id}</p>
+                  {/* <p>karma :{user.karma}</p>
+                <p> about : {user.about}</p> */}
+                </div>
+              );
+            })}
+          </div>
+          <div className="aParent">
+            <span className="author">karma</span>
+            {listOfAuthors.map((user) => {
+              return <p>{user.karma}</p>;
+            })}
+          </div>
+          <div className="aParent">
+            <span className="author">about</span>
+            {listOfAuthors.map((user) => {
+              return user.about ? (
+                <p className="nowrap">{user.about}</p>
+              ) : (
+                <p className="nowrap">
+                  no data available in the api about this section
+                </p>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

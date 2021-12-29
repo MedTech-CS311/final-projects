@@ -18,13 +18,13 @@ export default function Stories() {
       <div className="aParent">
         <span className="title">Title</span>
         {listOfUsers.map((user) => {
-          return <p>{user.title}</p>;
+          return <p className="nowrap">{user.title}</p>;
         })}
       </div>
       <div>
         <span className="author">Author</span>
         {listOfUsers.map((user) => {
-          return <p>{user.by.id}</p>;
+          return <p className="nowrap">{user.by}</p>;
         })}
       </div>
     </div>

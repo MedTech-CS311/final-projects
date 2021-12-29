@@ -1,3 +1,6 @@
+/*
+the file that i used to seed the db is seedwork
+*/
 var mongoose = require("mongoose");
 var request = require("request");
 const Story = require("./models/Story");
