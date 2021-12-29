@@ -18,7 +18,7 @@ function PokemonAddForm(props)
     }
     const preventString = () =>{
         var x = document.getElementById("addForm").elements["iNumber"].value;
-        if(x === "") {document.getElementById("addForm").elements["iNumber"].value = 0}
+        if(x === "") {document.getElementById("addForm").elements["iNumber"].value = 1}
     }
     const task = (e) => {
         console.log(esm()); //Replace by post request
@@ -36,13 +36,13 @@ function PokemonAddForm(props)
 
     const Form = (
         <form id = "addForm">
-            <label htmlFor="iNumber">Pokemon Number</label><br></br>
-            <input type="number" min='0' onKeyUp={preventString} name="iNumber"></input><br></br>
-            <label htmlFor="iName">Pokemon Name</label><br></br>
+            <label htmlFor="iNumber">◓Pokemon Number◓</label><br></br>
+            <input type="number" min='1' onKeyUp={preventString} name="iNumber"></input><br></br>
+            <label htmlFor="iName">◓Pokemon Name◓</label><br></br>
             <input type="text" name="iName"></input><br></br>
-            <label htmlFor="iUrl">Image URL</label><br></br>
+            <label htmlFor="iUrl">◓Image URL◓</label><br></br>
             <input type="text" name="iUrl"></input><br></br>
-            <label htmlFor="iTypes">Pokemon Type</label><br></br>
+            <label htmlFor="iTypes">◓Pokemon Type◓</label><br></br>
             <select name="iTypes">
                 <option value="Fire">Fire</option>
                 <option value="Water">Water</option>

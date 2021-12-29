@@ -19,8 +19,8 @@ function PokemonCard(props)
             <h2>{props.name}</h2>
             <img width="200" height="200" src={props.imageUrl} alt={props.name + "'s image is loading.."}></img>
             <div className= "cardDescription">
-                <p>Creature type: {t}</p>
-                <p>Database number: {props.number}</p>
+                <p>Type: {t}</p>
+                <p>Number: {props.number}</p>
             </div>
         </div>
     );

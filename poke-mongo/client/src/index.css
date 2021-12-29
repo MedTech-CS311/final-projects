@@ -28,12 +28,23 @@ body {
   background-repeat: no-repeat;
 }
 form {
-  background-color: #0ff;
+  
+  background-image: url('../assets/formBackg.png');
+  background-repeat:repeat-y;
+  overflow:hidden;
+  height: 400px;
+  width: 300px;
   font-family: 'Fira Mono', monospace;
-  width: fit-content;
+  border-radius: 25px;
   position: absolute;
+  transform: translateX(400px);
   z-index: 1;
+  text-align: left;
+  padding-left: 85px;
 }
+
+
+
 
 
 code {
@@ -44,17 +55,18 @@ code {
 .pokeButt {
   display: inline-block;
   background-image: url('../assets/pokeball.png');
+  
   background-size: contain;
   background-repeat: no-repeat;
   background-color: rgba(255, 0, 0, 0);
   border-color: rgba(255, 255, 255, 0);
   color: red;
-  font-family: 'Fira Mono', monospace;
+  font-family: 'Minecraft Regular';
   letter-spacing: 2.5px;
   padding-left: 4rem;
   padding-right: 4rem;
   padding-bottom: 1rem;
-  line-height: 20px;
+  line-height: 25px;
   text-align: left;
   transform: translateX(15.5rem);
   width: 200px;
@@ -151,6 +163,7 @@ code {
 
 #main_title {
   text-align: center;
+  
   font-family: 'Minecraft Regular';
   letter-spacing: 5px;
   font-size: 75px;
@@ -992,7 +1005,7 @@ li {
 
 .card h2 {
   color: white;
-  font-family: "Open Sans", Helvetica, sans-serif;
+  font-family: 'Pokemon Solid' ;
   background: rgb(87, 1, 87);
   box-shadow:
   0 0 5px #fff,            /* outer white */
@@ -1330,7 +1343,13 @@ li {
   -1px 0 8px #f0f,        /* outer left magenta */
   1px 0 8px #0ff;   
 }
-
+.cardDescription p {
+  text-align: center;
+  
+  
+  color: white;
+  transform: translateY(5px);
+}
 /*#region Card description section depending on type*/
 
 .card#GrassPoison .cardDescription {
@@ -1672,9 +1691,5 @@ li {
 
 /*#endregion Card description section depending on type*/
 
-.cardDescription p {
-  text-align: center;
-  color: white;
-  transform: translateY(5px);
-}
+
 
