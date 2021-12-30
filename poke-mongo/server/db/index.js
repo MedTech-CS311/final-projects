@@ -1,11 +1,9 @@
  const fs = require("fs");
  const mongoose = require('mongoose');
  const Pokemon = require('../resources/pokemon/Pokemon');
- const path = require("path");
 
  const pokemons = JSON.parse(
-  fs.readFileSync(
-    path.resolve(__dirname,"../../data/pokemon.json")
+  fs.readFileSync(__dirname + "/../../data/pokemon.json"
   ),
   "utf-8"
 );
