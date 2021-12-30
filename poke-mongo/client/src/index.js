@@ -4,10 +4,12 @@ import './index.css';
 import PokemonList from './components/PokemonList';
 import reportWebVitals from './reportWebVitals';
 import PokemonProTip from './components/PokemonProTip';
+import PokemonMusic from './components/PokemonMusic';
 
 
 ReactDOM.render(
   <React.StrictMode>
+    <PokemonMusic/>
     <PokemonProTip/>
     <div id="main_container">
       <h1 id="main_title">◓ POKE-MONGO ◓</h1>
