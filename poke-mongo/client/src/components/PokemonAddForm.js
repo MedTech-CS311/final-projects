@@ -39,6 +39,7 @@ function PokemonAddForm(props)
         if ('types' in json){
             props.update();
             alertify.success("Pokemon was added successfully!");
+            props.cancel();
         }
         else
         {
@@ -67,7 +68,7 @@ function PokemonAddForm(props)
         {
             postPokemon(object);
         }
-      }
+    }
       
     const cancel = (e) => {
         e.preventDefault();

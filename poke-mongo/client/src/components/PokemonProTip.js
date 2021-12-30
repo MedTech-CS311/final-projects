@@ -8,7 +8,7 @@ function timeout(delay) {
 
 const x = async () => {
     await timeout(5000);
-    alertify.message("Free Pro Tip:\r\nClick on a Pokemon card to view its official wiki page!",10); 
+    alertify.message("Pro Tip:\r\nClick on a Pokemon card to view its official wiki page!",10); 
 }
 
 function PokemonProTip()

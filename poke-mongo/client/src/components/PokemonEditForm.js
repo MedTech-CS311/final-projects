@@ -43,6 +43,7 @@ function PokemonEditForm(props)
         {
             props.update();
             alertify.success("Pokemon was updated successfully!") // replace
+            props.cancel();
         }
     }
 
@@ -57,7 +58,7 @@ function PokemonEditForm(props)
         {
             updatePokemon(object);
         }
-      }
+    }
 
     const cancel = (e) => {
         e.preventDefault();

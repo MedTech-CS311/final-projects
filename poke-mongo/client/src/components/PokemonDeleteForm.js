@@ -40,7 +40,8 @@ function PokemonDeleteForm(props)
             else
             {
                 props.update();
-                alertify.success("Pokemon was deleted successfully!") // replace
+                alertify.success("Pokemon was deleted successfully!")
+                props.cancel(); // replace
             }
         }
     }
