@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import PokemonList from './components/PokemonList';
-import addPokemon from './components/addPokemon';
+import AddPokemon from './components/AddPokemon';
 import './App.css';
 
 export default function App (){
@@ -17,7 +17,7 @@ export default function App (){
       </nav>
       <div>
         {active === "List" && <PokemonList/>}
-        {active === "Add" && <addPokemon/>}
+        {active === "Add" && <AddPokemon/>}
       
       
       </div>

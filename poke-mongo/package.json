@@ -12,11 +12,16 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.1",
+    "browserify-zlib": "^0.2.0",
     "concurrently": "^6.5.1",
     "express": "^4.17.2",
-    "mongoose": "^6.1.4"
+    "mongoose": "^6.1.4",
+    "node-polyfill-webpack-plugin": "^1.1.4",
+    "path-browserify": "^1.0.1",
+    "util": "^0.12.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "webpack": "^5.65.0"
   }
 }
