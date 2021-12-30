@@ -45,3 +45,7 @@ span {
   vertical-align: middle;
   line-height: normal;
 }
+
+.link {
+  text-decoration: none;
+}
