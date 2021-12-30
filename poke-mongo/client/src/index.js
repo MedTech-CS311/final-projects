@@ -5,6 +5,7 @@ import PokemonList from './components/PokemonList';
 import reportWebVitals from './reportWebVitals';
 import PokemonProTip from './components/PokemonProTip';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <PokemonProTip/>
