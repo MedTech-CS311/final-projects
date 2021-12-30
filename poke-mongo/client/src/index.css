@@ -188,6 +188,12 @@ li {
   border-radius: 25px;
 }
 
+.ajs-warning {
+  color: #000033;
+  background-image: url('../assets/stripes.gif') !important;
+  border-radius: 25px;
+}
+
 /*#endregion AlertifyJS*/
 
 /*#region Forms*/

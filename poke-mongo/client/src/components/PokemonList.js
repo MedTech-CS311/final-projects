@@ -26,6 +26,13 @@ function PokemonList()
         });  
     }
 
+    const getCardInfo = (number) => {
+        var result = initialData.find(card => {
+            return card.number.toString() === number;
+          })
+        return result;
+    }
+
     const filterList = () => {
         var v = document.getElementById("filterBar").value;
         if(v==="All")
@@ -52,7 +59,7 @@ function PokemonList()
     React.useEffect(filterList, [initialData]);
 
     const showList = data.map((card) => {
-        return (<li>
+        return (<li key={card.number}>
                     <PokemonCard name={card.name} imageUrl={card.imageUrl} 
                     types={card.types} number={card.number} />
                 </li>);
@@ -61,7 +68,7 @@ function PokemonList()
     return (
             <>
                 <PokemonButton title = {addPokemon} update = {getCurrentList}/>
-                <PokemonButton title = {editPokemon} update = {getCurrentList}/>
+                <PokemonButton title = {editPokemon} update = {getCurrentList} getCard = {getCardInfo}/>
                 <PokemonButton title = {deletePokemon} update = {getCurrentList}/>
                 <PokemonFilterBar change= {filterList}/>
                 <div className="list">
