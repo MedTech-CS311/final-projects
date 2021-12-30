@@ -9,7 +9,8 @@ function PokemonMusic (){
     return (
         <audio id='audioPokeMusic' muted={false}  controls={false} autoPlay ={true}> 
         <source type = 'audio/mp3' src = '/audioMusic.mp3' />  
-        </audio> 
+        </audio>
+         
     );
 }
 export default PokemonMusic;
