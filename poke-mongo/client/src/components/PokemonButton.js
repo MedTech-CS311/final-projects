@@ -2,6 +2,8 @@ import React from "react";
 import PokemonAddForm from "./PokemonAddForm";
 import PokemonDeleteForm from "./PokemonDeleteForm";
 import PokemonEditForm from "./PokemonEditForm";
+import alertify from 'alertifyjs';
+import 'alertifyjs/build/css/alertify.css';
 
 export var addPokemon = "Add Pokemon";
 export var editPokemon = "Edit Pokemon";
@@ -29,6 +31,10 @@ function PokemonButton (props){
     const task = () => {
         disableScroll();
         setShowForm(true);
+        if(props.title === editPokemon)
+        {
+            alertify.warning("Edit Pokemon: Leaving a field empty will not update that field!");
+        }
     }
 
     const cancel = () => 
@@ -47,7 +53,7 @@ function PokemonButton (props){
             break;
         case editPokemon:
             form = (
-                <PokemonEditForm cancel={cancel} update={props.update}/>
+                <PokemonEditForm cancel={cancel} update={props.update} getCard = {props.getCard}/>
             );
             break;
         case deletePokemon:

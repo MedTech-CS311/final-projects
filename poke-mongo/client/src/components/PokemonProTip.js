@@ -7,8 +7,20 @@ function timeout(delay) {
 }
 
 const x = async () => {
-    await timeout(5000);
-    alertify.message("Pro Tip:\r\nClick on a Pokemon card to view its official wiki page!",10); 
+    while(true)
+    {
+        await timeout(5000);
+        alertify.message("Pro Tip: Click on a Pokemon card to view its official wiki page!");
+        await timeout(30000);
+        alertify.message("Fact: There are 898 Pokemons, out of which 151 are the originals!");
+        await timeout(30000);
+        alertify.message("Fact: Pikachu directly translates as 'Sparkly mouse noise'!");
+        await timeout(30000);
+        alertify.message("Fact: Female Pikachu's have a dent in the end of their tails!");
+        await timeout(30000);
+        alertify.message("Fact: Some of the rarest Pokémon cards are worth over $100,000!");
+        await timeout(25000);  
+    }
 }
 
 function PokemonProTip()

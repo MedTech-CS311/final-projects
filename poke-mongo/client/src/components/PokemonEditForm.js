@@ -2,23 +2,7 @@ import alertify from 'alertifyjs';
 import 'alertifyjs/build/css/alertify.css';
 
 function PokemonEditForm(props)
-{   
-    const check = (v) => {return((v === "") ? null:v);}
-    const esm = () => {
-        var  number = check(document.getElementById("editForm").elements["iNumber"].value);
-        if (number === null) return null ;
-        var  name = check(document.getElementById("editForm").elements["iName"].value);
-        if (name === null) return null ;
-        var imageUrl= check(document.getElementById("editForm").elements["iUrl"].value);
-        if(imageUrl ===null ) return null ;
-        const formDataHolder = {
-            number: number,
-            name: name,
-            types: document.getElementById("editForm").elements["iTypes"].value.split(" "),
-            imageUrl: imageUrl
-        }
-       return formDataHolder 
-    }
+{
     const preventString = () =>{
         var x = document.getElementById("editForm").elements["iNumber"].value;
         if(x === "") {document.getElementById("editForm").elements["iNumber"].value = 1}
@@ -49,14 +33,48 @@ function PokemonEditForm(props)
 
     const task = (e) => {
         e.preventDefault();
-        var object = esm();
-        if(object === null)
-        {
-            alertify.error("Error: Make sure you have filled the input fields properly!")
+        var  number = document.getElementById("editForm").elements["iNumber"].value;
+        if (number === ""){
+        
+            alertify.error("Error: Make sure you have filled the number field properly!")
         }
         else
-        {
-            updatePokemon(object);
+        {   
+            const card = props.getCard(number);
+
+            if(card === undefined)
+            {
+                alertify.error("Error: Pokemon with this number does not exist!");
+                return;
+            }
+
+            var  name = document.getElementById("editForm").elements["iName"].value;
+            if(name === "")
+            {
+                name = card.name;
+            }
+
+            var t = document.getElementById("editForm").elements["iTypes"].value;
+            var types = t.split(" ");
+            if(t === "Same")
+            {
+                types = card.types.slice();
+            }   
+
+            var imageUrl= document.getElementById("editForm").elements["iUrl"].value;
+            if(imageUrl === "")
+            {
+                imageUrl = card.imageUrl;
+            }
+
+            const formDataHolder = {
+                number: number,
+                name: name,
+                types: types,
+                imageUrl: imageUrl
+            }
+
+            updatePokemon(formDataHolder);
         }
     }
 
@@ -76,6 +94,7 @@ function PokemonEditForm(props)
         <input type='text' name ='iName'></input><br></br>
         <label htmlFor = 'iTypes'>◓Pokemon Type◓</label><br></br>
             <select name="iTypes">
+                <option value="Same">Keep same type</option>
                 <option value="Fire">Fire</option>
                 <option value="Water">Water</option>
                 <option value="Bug">Bug</option>
