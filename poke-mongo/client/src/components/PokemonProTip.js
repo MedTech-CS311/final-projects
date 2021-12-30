@@ -2,11 +2,11 @@ import alertify from 'alertifyjs';
 import 'alertifyjs/build/css/alertify.css';
 import React from 'react';
 
-function timeout(delay) {
+function timeout(delay) { // wait for delay in ms
     return new Promise( res => setTimeout(res, delay) );
 }
 
-const x = async () => {
+const x = async () => { // send pretty notification using Alertifyjs with cool facts in them
     while(true)
     {
         await timeout(5000);
@@ -25,7 +25,7 @@ const x = async () => {
 
 function PokemonProTip()
 {
-    React.useEffect(x,[]);
+    React.useEffect(x,[]); 
     return <></>;
 }
 

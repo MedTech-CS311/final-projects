@@ -4,16 +4,16 @@ import 'alertifyjs/build/css/alertify.css';
 function PokemonDeleteForm(props)
 {
     const task = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevent form from refreshing the page on button click
         deletePokemon();
       }
 
     const cancel = (e) => {
-        e.preventDefault();
-        props.cancel();
+        e.preventDefault(); // Prevent form from refreshing the page on button click
+        props.cancel(); // Hide form
       }
 
-    const preventString = () =>{
+    const preventString = () =>{ // Prevents number input field from having a string value
         var x = document.getElementById("deleteForm").elements["iNumber"].value;
         if(x === "") {document.getElementById("deleteForm").elements["iNumber"].value = 1}
     }
@@ -22,26 +22,26 @@ function PokemonDeleteForm(props)
     {
         var number = document.getElementById("deleteForm").elements["iNumber"].value;
         
-        if(number==="")
+        if(number==="") // if the number field was left empty
         {
             alertify.error("Error: Number field is empty!") 
         }
-        else
+        else // a pokemon number was given
         {
-            const response = await fetch("http://localhost:8000/api/pokemon/" + number + "/",{
+            const response = await fetch(process.env.REACT_APP_API_URL + number + "/",{
                 method: 'DELETE'
             });
-            const json = await response.json().catch(() => {return;});
+            const json = await response.json().catch(() => {return;}); //in case of error, leave 'const json' as undefined
 
-            if(json === undefined)
+            if(json === undefined) // if express router didn't apply the delete method, hence json is undefined
             {
                 alertify.error("Error: Pokemon with this number does not exist!");
             }
-            else
+            else // express router returned the deleted pokemon json
             {
-                props.update();
+                props.update(); // update current pokemon list
                 alertify.success("Pokemon was deleted successfully!")
-                props.cancel(); // replace
+                props.cancel(); // hide form after a successful task
             }
         }
     }

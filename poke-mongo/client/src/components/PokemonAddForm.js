@@ -3,30 +3,30 @@ import 'alertifyjs/build/css/alertify.css';
 
 function PokemonAddForm(props)
 {  
-    const check = (v) => {return((v === "") ? null:v);}
-    const esm = () => {
+    const check = (v) => {return((v === "") ? null:v);} 
+    const getFormData = () => {
         var  number = check(document.getElementById("addForm").elements["iNumber"].value);
-        if (number === null) return null ;
+        if (number === null) return null ; // Returns null if number value was invalid
         var  name = check(document.getElementById("addForm").elements["iName"].value);
-        if (name === null) return null ;
+        if (name === null) return null ; // Returns null if name value was invalid
         var imageUrl= check(document.getElementById("addForm").elements["iUrl"].value);
-        if(imageUrl ===null ) return null ;
+        if(imageUrl ===null ) return null ; // Returns null if url value was invalid
         const formDataHolder = {
             number: number,
             name: name,
             types: document.getElementById("addForm").elements["iTypes"].value.split(" "),
             imageUrl: imageUrl
         }
-       return formDataHolder 
+       return formDataHolder // If all values are there, create an object with them and return it
     }
-    const preventString = () =>{
+    const preventString = () =>{ //Prevents number input field of having a string value in it
         var x = document.getElementById("addForm").elements["iNumber"].value;
         if(x === "") {document.getElementById("addForm").elements["iNumber"].value = 1}
     }
 
-    async function postPokemon(object)
+    async function postPokemon(object) // Function responsible of adding a pokemon
     {
-        const response = await fetch("http://localhost:8000/api/pokemon/", 
+        const response = await fetch(process.env.REACT_APP_API_URL, 
         {
             method: 'POST',
             body: JSON.stringify(object),
@@ -36,12 +36,12 @@ function PokemonAddForm(props)
         });
 
         const json = await response.json();
-        if ('types' in json){
+        if ('types' in json){ // If express router returns a valid object
             props.update();
             alertify.success("Pokemon was added successfully!");
             props.cancel();
         }
-        else
+        else // If express router returns an error
         {
             var keyPattern = json.keyPattern
             if ('number' in keyPattern){
@@ -57,9 +57,9 @@ function PokemonAddForm(props)
         }
     }
 
-    const task = (e) => {
-        e.preventDefault();
-        var object = esm();
+    const task = (e) => { 
+        e.preventDefault(); // Prevent form from refreshing the page on button click
+        var object = getFormData();
         if(object === null)
         {
             alertify.error("Error: Make sure you have filled the input fields properly!");
@@ -70,14 +70,10 @@ function PokemonAddForm(props)
         }
     }
       
-    const cancel = (e) => {
-        e.preventDefault();
-        props.cancel();
+    const cancel = (e) => { // Form close button
+        e.preventDefault(); // Prevent form from refreshing the page on button click
+        props.cancel(); // Hide form
       }
-    
-    /*const prevent = (e) => {
-        e.preventDefault();
-    }*/
 
     const Form = (
         <form id = "addForm">

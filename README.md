@@ -20,9 +20,9 @@ Make sure that you have already created your own **organisation** with your team
 
 Edit this file by filling your team composition here:
 
-- [ ] _Student full name_ | _Github username_ | **Scrum Master**
-- [ ] _Student full name_ | _Gihub username_
-- [ ] _Student full name_ | _Gihub username_
+- [ ] _Aymen Hammami_ | _aymendps_ | **Front End**
+- [ ] _Aziz Maazouz_ | _aziz-maazouz_ | **Front End**
+- [ ] _Youssef Aydi_ | _youssef-aydi_ | **Back End**
 
 ## Technologies
 

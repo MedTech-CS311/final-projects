@@ -1,8 +1,8 @@
 function PokemonFilterBar (props)
-{   
+{   // on changing the value in the dropdown list, the displayed list of pokemon cards gets updated (props.change)
     return (
         <div className="custom-dropdown">
-            <select onChange={props.change} name="iTypes" id="filterBar">
+            <select onChange={props.change} name="iTypes" id="filterBar"> 
                 <option value="All">All</option>
                 <option value="Fire">Fire</option>
                 <option value="Water">Water</option>

@@ -2,10 +2,12 @@ function PokemonCard(props)
 {   
     const openWikiLink = () =>{
             const link = 'https://www.pokemon.com/us/pokedex/'+props.name;
-            window.open(link, '_blank').focus();
+            window.open(link, '_blank').focus(); // Open new tab with the generated link
     }
-    var t = "";
-    var id = "";
+    
+    var t = ""; // Will store text that will be used in card description
+    var id = ""; // Will store id to be given to a div (used for CSS)
+
     if(props.types.length > 1)
     {
         t = props.types[0] + " & " + props.types[1];

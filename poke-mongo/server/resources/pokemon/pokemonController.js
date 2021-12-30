@@ -1,8 +1,6 @@
 const Pokemon = require("./Pokemon");
 
-var InsertPokemon = (req, res) => {
-  //Insert one pokemon
-  //{
+var InsertPokemon = (req, res) => {   //Add one pokemon
   const newPokemon = new Pokemon(req.body);
   newPokemon.save()
   .then((newPokemon) => {
@@ -11,11 +9,9 @@ var InsertPokemon = (req, res) => {
   .catch((error) => {
     res.status(500).send(error);
   });
-  //}
-  //Insert Many Pokemons
-  //Pokemon.insertMany(pokemons)
 };
-var FindAllPokemons = (req, res) => {
+
+var FindAllPokemons = (req, res) => { // Returns all pokemons
   Pokemon.find({})
     .then((pokemons) => {
       res.status(200).send(pokemons);
@@ -25,7 +21,7 @@ var FindAllPokemons = (req, res) => {
     });
 };
 
-var DeleteAllPokemons = (req, res) => {
+var DeleteAllPokemons = (req, res) => { // Deletes all pokemons
   Pokemon.find({})
     .deleteMany()
     .then((pokemons) => {
@@ -36,7 +32,7 @@ var DeleteAllPokemons = (req, res) => {
     });
 };
 
-var FindByNumber = (req, res) => {
+var FindByNumber = (req, res) => { // Returns a pokemon using its number
   Pokemon.find(req.params)
     .then((pokemon) => {
       res.status(200).send(pokemon);
@@ -46,7 +42,7 @@ var FindByNumber = (req, res) => {
     });
 };
 
-var DeleteByNumber = (req, res) => {
+var DeleteByNumber = (req, res) => { // Deletes a pokemon using its number
   Pokemon.findOneAndDelete(req.params, { new: true })
     .then((pokemon) => {
       res.status(200).send(pokemon);
@@ -56,7 +52,7 @@ var DeleteByNumber = (req, res) => {
     });
 };
 
-var UpdateByNumber = (req, res) => {
+var UpdateByNumber = (req, res) => { // Updates a pokemon using its number
   Pokemon.findOneAndUpdate(req.params, req.body, { new: true })
     .then((pokemon) => {
       res.status(200).send(pokemon);
@@ -66,6 +62,7 @@ var UpdateByNumber = (req, res) => {
     });
 };
 
+// Exports
 exports.InsertPokemon = InsertPokemon;
 exports.FindAllPokemons = FindAllPokemons;
 exports.DeleteAllPokemons = DeleteAllPokemons;

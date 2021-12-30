@@ -3,84 +3,84 @@ import 'alertifyjs/build/css/alertify.css';
 
 function PokemonEditForm(props)
 {
-    const preventString = () =>{
+    const preventString = () =>{ // Prevents number input field from having a string value
         var x = document.getElementById("editForm").elements["iNumber"].value;
         if(x === "") {document.getElementById("editForm").elements["iNumber"].value = 1}
     }
 
     async function updatePokemon(object)
     {
-        const response = await fetch("http://localhost:8000/api/pokemon/" + object.number + "/",{
+        const response = await fetch(process.env.REACT_APP_API_URL + object.number + "/",{
             method: 'PUT',
             body: JSON.stringify(object),
             headers: {
                 'Content-Type': 'application/json'
               }
         });
-        const json = await response.json().catch(() => {return;});
+        const json = await response.json().catch(() => {return;}); //in case of error, leave 'const json' as undefined
 
-        if(json === undefined)
+        if(json === undefined) // if express router didn't apply the delete method, hence json is undefined
         {
             alertify.error("Error: Pokemon with this number does not exist!");
         }
         else
         {
-            props.update();
-            alertify.success("Pokemon was updated successfully!") // replace
-            props.cancel();
+            props.update(); // update current pokemon list
+            alertify.success("Pokemon was updated successfully!")
+            props.cancel(); // hide form after successful task
         }
     }
 
     const task = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevent form from refreshing the page on button click
         var  number = document.getElementById("editForm").elements["iNumber"].value;
-        if (number === ""){
+        if (number === ""){ // no number was given
         
             alertify.error("Error: Make sure you have filled the number field properly!")
         }
-        else
+        else // number was given
         {   
-            const card = props.getCard(number);
+            const card = props.getCard(number); //find the pokemon in the list 
 
-            if(card === undefined)
+            if(card === undefined) //no such pokemon is in the list (which is always in sync with the database)
             {
                 alertify.error("Error: Pokemon with this number does not exist!");
                 return;
             }
 
             var  name = document.getElementById("editForm").elements["iName"].value;
-            if(name === "")
+            if(name === "") // if name was left empty, do not edit the name value
             {
                 name = card.name;
             }
 
             var t = document.getElementById("editForm").elements["iTypes"].value;
             var types = t.split(" ");
-            if(t === "Same")
+            if(t === "Same") // if 'keep same type' was selected, do not edit the types value
             {
                 types = card.types.slice();
             }   
 
             var imageUrl= document.getElementById("editForm").elements["iUrl"].value;
-            if(imageUrl === "")
+            if(imageUrl === "") // if image url was left empty, do not edit the url value
             {
                 imageUrl = card.imageUrl;
             }
 
-            const formDataHolder = {
+            const formDataHolder = { // create the new object
                 number: number,
                 name: name,
                 types: types,
                 imageUrl: imageUrl
             }
 
-            updatePokemon(formDataHolder);
+            updatePokemon(formDataHolder); // update the pokemon with the new object
         }
     }
 
     const cancel = (e) => {
-        e.preventDefault();
-        props.cancel();
+        e.preventDefault(); // Prevent form from refreshing page on button click
+        props.cancel(); // Hide form
       }
     const Form = (
         <form id ='editForm'>

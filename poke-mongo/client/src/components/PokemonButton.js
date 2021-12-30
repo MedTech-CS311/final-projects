@@ -5,10 +5,9 @@ import PokemonEditForm from "./PokemonEditForm";
 import alertify from 'alertifyjs';
 import 'alertifyjs/build/css/alertify.css';
 
-export var addPokemon = "Add Pokemon";
-export var editPokemon = "Edit Pokemon";
-export var deletePokemon = "Delete Pokemon";
-
+var editAlert; /* Notification that appears on bottom right corner to let user 
+                  know that leaving a field empty in 'edit pokemon' will not change that specific value */
+                  
 function PokemonButton (props){
 
     const [showForm,setShowForm] = React.useState(false);
@@ -18,7 +17,7 @@ function PokemonButton (props){
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
       
-            // if any scroll is attempted, set this to the previous value
+            // If any scroll is attempted, set this to the previous value
             window.onscroll = function() {
                 window.scrollTo(scrollLeft, scrollTop);
             };
@@ -30,17 +29,17 @@ function PokemonButton (props){
 
     const task = () => {
         disableScroll();
-        setShowForm(true);
+        setShowForm(true); // Show form
         if(props.title === editPokemon)
         {
-            alertify.warning("Edit Pokemon: Leaving a field empty will not update that field!");
+            editAlert = alertify.warning("Edit Pokemon: Leaving a field empty will not update that field!",0);
         }
     }
 
-    const cancel = () => 
-    {
+    const cancel = () => {
         enableScroll();
-        setShowForm(false);
+        setShowForm(false); // Hide form
+        editAlert.dismiss();
     }
 
     var form;
@@ -76,5 +75,7 @@ function PokemonButton (props){
     );
 }
 export default PokemonButton;
-
+export var addPokemon = "Add Pokemon";
+export var editPokemon = "Edit Pokemon";
+export var deletePokemon = "Delete Pokemon";
 
