@@ -1,3 +1,6 @@
+import alertify from 'alertifyjs';
+import 'alertifyjs/build/css/alertify.css';
+
 function PokemonDeleteForm(props)
 {
     const task = (e) => {
@@ -21,7 +24,7 @@ function PokemonDeleteForm(props)
         
         if(number==="")
         {
-            alert("Error: Number field is empty!") 
+            alertify.error("Error: Number field is empty!") 
         }
         else
         {
@@ -32,11 +35,12 @@ function PokemonDeleteForm(props)
 
             if(json === undefined)
             {
-                alert("Error: Pokemon with this number does not exist!");
+                alertify.error("Error: Pokemon with this number does not exist!");
             }
             else
             {
-                props.update(); // replace
+                props.update();
+                alertify.success("Pokemon was deleted successfully!") // replace
             }
         }
     }

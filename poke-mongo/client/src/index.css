@@ -28,24 +28,52 @@ body {
   background-repeat: no-repeat;
 }
 form {
-  background-image: url('../assets/formBackg.jpg');
-  
+  background-image: url('../assets/formBackg.jpg'); 
   background-size: cover;
   overflow:hidden;
   height: 420px;
   width: 300px;
   font-family: 'Fira Mono', monospace;
   border-radius: 25px;
-  position: absolute;
-  
+  /*position: absolute;*/
   z-index: 1;
   text-align: center;
   background-repeat: no-repeat;
-  margin-top: 120px;
-  margin-left: 527px;
-  
-  padding-top: 65px;  
+  /*margin-top: 120px;*/
+  /*margin-left: 527px;*/
+  padding-top: 65px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+.ajs-message { 
+  color: #000033;
+  background-image: url('https://c.tenor.com/_3R8EL8_DQYAAAAi/pokeball-pokemon.gif');
+  background-color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-style: italic;
+  font-weight: bold;
+  border-style: solid;
+  border-color: #000033;
+  border-radius: 25px;
+}
+
+.ajs-error {
+  color: white;
+  background: rgb(233,47,48) !important;
+  border-radius: 25px;
+}
+
+.ajs-success {
+  color: #000033;
+  background: rgb(128,175,114) !important;
+  border-radius: 25px;
+}
+
+
 #formContainer {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.801);
@@ -58,9 +86,23 @@ form {
 }
 .cancelButton {
   margin-left: 240px;
-  
-
 }
+#cancelButton {
+  background-color: rgb(233,47,48);
+  color: black;
+  border-color: black;
+  border-style: solid;
+  filter: brightness(100%);
+}
+#cancelButton:hover
+{
+  filter: brightness(130%);
+}
+#cancelButton:active
+{
+  filter: brightness(70%);
+}
+
 form input {
   display: block;
   margin-left: auto;

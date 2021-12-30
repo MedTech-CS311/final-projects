@@ -1,3 +1,6 @@
+import alertify from 'alertifyjs';
+import 'alertifyjs/build/css/alertify.css';
+
 function PokemonAddForm(props)
 {  
     const check = (v) => {return((v === "") ? null:v);}
@@ -34,19 +37,20 @@ function PokemonAddForm(props)
 
         const json = await response.json();
         if ('types' in json){
-            props.update(); // replace
+            props.update();
+            alertify.success("Pokemon was added successfully!");
         }
         else
         {
             var keyPattern = json.keyPattern
             if ('number' in keyPattern){
-                alert('Error: Pokemon number already exists!')
+                alertify.error('Error: Pokemon number already exists!');
             }
             if ('name' in keyPattern){
-                alert('Error: Pokemon name already exists!')
+                alertify.error('Error: Pokemon name already exists!');
             }
             if ('imageUrl' in keyPattern){
-                alert('Error: Really ?')
+                alertify.error('Error: Really ?');
             }
             
         }
@@ -57,7 +61,7 @@ function PokemonAddForm(props)
         var object = esm();
         if(object === null)
         {
-            alert("Error: Make sure you have filled the input fields properly!")
+            alertify.error("Error: Make sure you have filled the input fields properly!");
         }
         else
         {

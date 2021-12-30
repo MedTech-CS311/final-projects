@@ -1,3 +1,6 @@
+import alertify from 'alertifyjs';
+import 'alertifyjs/build/css/alertify.css';
+
 function PokemonEditForm(props)
 {   
     const check = (v) => {return((v === "") ? null:v);}
@@ -34,11 +37,12 @@ function PokemonEditForm(props)
 
         if(json === undefined)
         {
-            alert("Error: Pokemon with this number does not exist!");
+            alertify.error("Error: Pokemon with this number does not exist!");
         }
         else
         {
-            props.update(); // replace
+            props.update();
+            alertify.success("Pokemon was updated successfully!") // replace
         }
     }
 
@@ -47,7 +51,7 @@ function PokemonEditForm(props)
         var object = esm();
         if(object === null)
         {
-            alert("Error: Make sure you have filled the input fields properly!")
+            alertify.error("Error: Make sure you have filled the input fields properly!")
         }
         else
         {

@@ -13,6 +13,7 @@ const compareArrays = (a,b) =>
 };
 
 
+
 function PokemonList()
 {   
     const [data, setData] = React.useState([]);
