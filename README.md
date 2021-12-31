@@ -20,9 +20,9 @@ Make sure that you have already created your own **organisation** with your team
 
 Edit this file by filling your team composition here:
 
-- [x] _Student full name_ | _Github username_ | **Scrum Master**
-- [x] _Student full name_ | _Gihub username_
-- [x] _Student full name_ | _Gihub username_
+- [x] Mahmoud Mansouri | MahmoudMans | **Scrum Master**
+- [x] Mohamed Achraf Liratni | MohamedLiratni
+- [x] Nour Safta | Nour
 
 For our project , we ensured that all of the team members has contributed equally to build a su full-stack application. So, we divided the work as follows: -Part 1 and 2 :each one of us did it alone then we communicated with each other through online and face-to-face meetings to track our progress,and finally each member put his work in his own branch. -Starting from Part 3 till Part 6, we did it all together on the same laptop through face-to-face meetings.
 
