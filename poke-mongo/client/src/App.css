@@ -90,3 +90,18 @@
   background-color: green;
   color: white;
 }
+
+
+
+.Login-component {
+  /* The image used */
+  background-image: url(https://i.gadgets360cdn.com/large/pokemon_go_1571750706913.jpg);
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

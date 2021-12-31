@@ -1,6 +1,7 @@
 const express=require("express");
 const pokemonRouter = express.Router()
 const Pokemon = require("./Pokemon");
+pokemonRouter.use(express.json())
 
 const pokemonController =require("./pokemonController")
 const bodyParser= require("body-parser");

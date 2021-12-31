@@ -6,6 +6,7 @@ class PokemonList extends React.Component {
 			pokemons:[{number:0,name:"",types:[],imageUrl:""}]
 	  }
 	}
+ 
 
     componentDidMount(){
         fetch('./pokemon')
@@ -19,10 +20,7 @@ class PokemonList extends React.Component {
            <ul>
                {this.state.pokemons.map(pokemon => 
                 <li key={pokemon.number}>{pokemon.name} <img src={pokemon.imageUrl} width={100} height={100}/> </li>)}
-           </ul>
-           
-            
-            
+           </ul>    
             </div>
             );
     }

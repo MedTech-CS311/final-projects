@@ -15,6 +15,7 @@
     "browserify-zlib": "^0.2.0",
     "concurrently": "^6.5.1",
     "express": "^4.17.2",
+    "jquery": "^3.6.0",
     "mongoose": "^6.1.4",
     "node-polyfill-webpack-plugin": "^1.1.4",
     "path-browserify": "^1.0.1",

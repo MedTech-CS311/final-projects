@@ -1,4 +1,8 @@
+const { json } = require("body-parser");
+const { render } = require("express/lib/response");
 const Pokemon = require("./Pokemon");
+
+
 
 
 
@@ -18,16 +22,13 @@ exports.pokemon_get_one = (req,res) => {
   };
 
 exports.pokemon_post =  (req,res) => {
-    const userData = req.body;
-    const newPokemon = new Pokemon(userData);
-    newPokemon.save()
-    .then(() => {
-        console.log("Saved!")
-        res.status(201).json(newPokemon);
-})
-    .catch((error) => {
-        console.log("error");
-        res.send(error)
+    console.log("the new pokemon is :",req.body);
+    const newPokemon = new Pokemon(req.body);
+    newPokemon.save().then((pokemon) =>{
+        res.status(201).send(pokemon)
+    })
+    .catch((error)=> {
+        res.status(500).send(error);
     })
 };
 
