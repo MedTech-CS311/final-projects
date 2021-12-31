@@ -7,7 +7,9 @@ const Story = require("./models/Story");
 const dbconnection = require("./db/index");
 const Author = require("./models/Author");
 //dbconnection();
-mongoose.connect("mongodb://localhost/hackernewsdb");
+mongoose.connect(
+  "mongodb+srv://Mahmoud:Midou2001@cluster0.h0gxs.mongodb.net/hackernewsdb?retryWrites=true&w=majority"
+);
 // In this file, build out a worker that will populate the database
 // with the data you need from the HackerNews API
 

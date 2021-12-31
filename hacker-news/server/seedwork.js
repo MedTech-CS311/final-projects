@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const request = require("request");
 const Story = require("./models/Story");
 const Author = require("./models/Author");
-mongoose.connect("mongodb://localhost/hackernewsdb");
+mongoose.connect(
+  "mongodb+srv://Mahmoud:Midou2001@cluster0.h0gxs.mongodb.net/hackernewsdb?retryWrites=true&w=majority"
+);
 
 Author.deleteMany({}).then(() => {
   console.log("success");
