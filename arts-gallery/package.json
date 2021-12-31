@@ -1,0 +1,24 @@
+{
+  "name": "art-gallery",
+  "version": "1.0.0",
+  "description": "Full-stack application to save paintings into a gallery by uploading them and saving them into a database.",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && npm start",
+    "backend": "cd server && nodemon server.js",
+    "dev": "concurrently \"npm run backend\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfareya/art-gallery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sfareya/art-gallery/issues"
+  },
+  "homepage": "https://github.com/sfareya/art-gallery#readme",
+  "dependencies": {
+    "concurrently": "^6.5.1"
+  }
+}
