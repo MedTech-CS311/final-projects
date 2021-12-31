@@ -39,7 +39,7 @@ function PokemonFilterBar (props)
                 <option value="Ice Flying">Ice & Flying</option>
                 <option value="Electric Flying">Electric & Flying</option>
                 <option value="Fire Flying">Fire & Flying</option>
-                <option value="Dragon Flying">Water & Flying</option>
+                <option value="Dragon Flying">Dragon & Flying</option>
             </select>
         </div>
     );
