@@ -3,7 +3,6 @@ function PokemonMusic (){ // Responsible for playing a certain background music 
     const audioVolume = () => {
         var av = document.getElementById('audioPokeMusic');
         av.volume = 0.02;
-        console.log(document.getElementById('audioPokeMusic').volume);
     }
     React.useEffect(audioVolume,[]); // Set volume to a certain percentage (so it's not too loud)
     return (
