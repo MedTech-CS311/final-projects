@@ -2,13 +2,13 @@
     font-family: 'Open Sans', sans-serif;
 }
 #submit-button {
-    background-color: grey;
+    background-color: #00559A;
     font-weight: 200;
     margin-top: 40px;
-    border: solid 4px;
+    border: solid 1px;
     padding: 10px;
     font-size: 20px;
-    color: black;
+    color: white;
     width: 20%;
     margin-left: 25%;
 
@@ -26,9 +26,11 @@
     font: bold;
     margin-top: 10px;
     margin-left:30px;
+    margin-right: 10px;
     font-family: Zen Antique;
-    color: blue;
-    size: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
     
 }
 
@@ -42,4 +44,10 @@ label{
     size: 70px;
     font: bold;
 
+}
+
+.Form {
+    border-color: blue;
+    box-sizing:border-box;
+    position: static;
 }

@@ -1,0 +1,19 @@
+ul{
+    min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
+  }
+ li{ 
+  display: inline;
+  }
+
+.titlePok{
+    margin-top: 100px;
+    margin-right: 2px;
+    font-size: large;
+    color: #174E78;
+    text-align: center;
+    font-family: serif;
+    font-size: 50px;
+    font-weight: bold;
+}

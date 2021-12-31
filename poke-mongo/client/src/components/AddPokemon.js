@@ -3,6 +3,7 @@ import react, {useState} from "react";
 import './AddPokemon.css';
 import axios from 'axios'
 
+
 const  AddPokemon = () => {
     const [number, setNumber] = useState("");
     const [name, setName] = useState("");
@@ -20,7 +21,7 @@ const  AddPokemon = () => {
     }
   
         return (
-        <div>
+        <div class="Form">
             <form>
             <div class= "input" >
             <label for="Number">Number</label>

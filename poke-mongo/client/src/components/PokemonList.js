@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './PokemonList.css'
 class PokemonList extends React.Component {
     constructor(){
 		super();
@@ -16,7 +17,7 @@ class PokemonList extends React.Component {
     render() { 
         return(
         <div>
-           <h2>PokemonList</h2>
+           <h2 class="titlePok">List Of Pokemons</h2>
            <ul>
                {this.state.pokemons.map(pokemon => 
                 <li key={pokemon.number}>{pokemon.name} <img src={pokemon.imageUrl} width={100} height={100}/> </li>)}

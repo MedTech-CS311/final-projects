@@ -56,9 +56,8 @@
   margin-left: 30px;
   margin-right: autos;
   width: 50%;
-  content:url("https://www.internetmatters.org/wp-content/uploads/2018/01/Pok%C3%A9mon_GO_logo-600x314.png");
+  content: url('https://o.remove.bg/downloads/164a26ba-41cd-4d7d-b500-8075dc058961/2-24425_pinoy-pokemon-go-pokemon-go-logo-transparent-removebg-preview.png');
 }
-
 .user {
   text-align: center;
   white-space: nowrap;
@@ -67,14 +66,14 @@
   margin-top: 100px;
   margin-right: 2px;
   font-size: large;
-  color: red;
+  color: #004478;
   text-align: center;
   font-family: serif;
-  font-size: 35px;
+  font-size: 70px;
 }
 
 .button {
-  background-color: black;
+  background-color:  #00559A;
   font-weight: 200;
   margin-top: 40px;
   border: solid 2px;
@@ -91,17 +90,15 @@
   color: white;
 }
 
+.Welcome {
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190628/ourmid/pngtree-elegant-light-blue-line-background-image_272095.jpg');
+  width:100%;
+  height:100%;
+ 
+  box-sizing:border-box;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center;
 
-
-.Login-component {
-  /* The image used */
-  background-image: url(https://i.gadgets360cdn.com/large/pokemon_go_1571750706913.jpg);
-
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
+
