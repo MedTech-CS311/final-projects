@@ -1,21 +1,5 @@
 # Final Projects
 
-## Introduction
-
-Welcome to Final Projects. This repository will serve as the starter for your final full-stack project.
-Before starting, make sure:
-
-- [ ] You have chosen your teammates for the project
-- [ ] You have created an organisation and all your teammates are members
-
-Make sure that you have already created your own **organisation** with your teammates
-
-## Get Started
-
-- [ ] Fork the repository under your organisation
-- [ ] Each member should clone the forked repository on his local machine
-- [ ] Choose one of the projects that has not been reserved
-
 ## Team composition
 
 Edit this file by filling your team composition here:
@@ -24,26 +8,9 @@ Edit this file by filling your team composition here:
 - [ ] _Aziz Maazouz_ | _aziz-maazouz_ | **Front End**
 - [ ] _Youssef Aydi_ | _youssef-aydi_ | **Back End**
 
-## Technologies
+## Heroku
 
-In you assignment, you have to use all the following Technologies
-
-- React
-- NodeJS
-- Express
-
-Choose one of these Technologies for your DBMS and your ORM
-
-- [ ] MongoDB + Mongoose
-- [ ] MySQL + Sequelize
-
-Feel free to use any of these technologies
-
-- Redux
-- Bootstrap
-- Tailwind
-- Gatsby
-- ...
+Link: https://my-poke-mongo.herokuapp.com/
 
 ## Submission
 
