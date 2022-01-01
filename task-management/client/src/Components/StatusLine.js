@@ -34,7 +34,7 @@ export default function StatusLine(props) {
           deleteTask={(id) => deleteTask(id)}
           moveTask={(id, _id) => moveTask(id, _id)}
           cancelChange={(task) => cancelChange(task)}
-          key={task._id}
+          key={task.id}
           task={task}
         />
       );
