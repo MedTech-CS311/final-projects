@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "name": "Cream Foundation",
+      "category": "Makeup",
+      "brand": "Revolution",
+      "price": "39.900TND",
+      "quantity": "10",
+      "id": 1
+    },
+    {
+      "name": "lipstick",
+      "category": "makeup",
+      "brand": "Forever",
+      "price": "49.000TND",
+      "quantity": "14",
+      "id": 2
+    }
+  ]
+}
