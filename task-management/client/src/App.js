@@ -1,4 +1,5 @@
 import React from 'react';
+import Main from './Components/Main'
 
 
 
@@ -7,7 +8,7 @@ const App = ()=>{
 
     return(
         <div className ="App">
-            <h1>Task Management</h1>
+           <Main></Main>
             
         </div>
     )

@@ -7,21 +7,29 @@ const taskSchema = new Schema({
 
     id : {
         type: Number,
-        required : true
     },
     title : {
         type: String,
         required : true
     },
+    description : {
+        type:String,
+    },
     deadline : {
-        type :Date,
+        type :String,
         required :true
     },
     isCompleted : {
         type: Boolean,
         required:true
+    },
+    priority : {
+        type : String,
+    },
+    isCollapsed : {
+        type : Boolean,
+        require:true
     }
-
 });
 
 

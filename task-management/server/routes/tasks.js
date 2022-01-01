@@ -10,7 +10,10 @@ router.post("/", async(req,res)=>{
         id : req.body.id,
         title: req.body.title,
         deadline: req.body.deadline,
-        isCompleted: req.body.isCompleted
+        description : req.body.description,
+        isCompleted: req.body.isCompleted,
+        priority: req.body.priority,
+        isCollapsed: true
     });
 
     try{
