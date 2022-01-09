@@ -1,4 +1,4 @@
-module.exports = [
+const fake_data = [
     {
       'id': 1234,
       'title': 'Prepare Business Model',
@@ -23,4 +23,10 @@ module.exports = [
       'deadline': 20-02-2021,
       'isCompleted': false
     },
-  ];
+];
+
+exports.fake_data = fake_data;
+
+
+
+
