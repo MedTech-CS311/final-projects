@@ -10,6 +10,8 @@ router.get("/top10", Story.findTopTen);
 
 router.post("/Story", Story.create);
 
+router.post("/hack",Story.fill)
+
 
 app.use('/api/Stories', router);
 

@@ -1,6 +1,7 @@
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Story = mongoose.model('Story');
+var request = require('request');
 
 exports.create = (req, res) => {
   
@@ -36,7 +37,7 @@ exports.create = (req, res) => {
 
 exports.getStories = (req,res) => {
    
-  Story.find().sort({score:'desc'}).then(
+  Story.find().sort({score:'desc'}).limit(10).then(
     data=>{
       res.send(data);
     })
@@ -66,3 +67,45 @@ exports.findTopTen = (req, res) => {
       });
   
 };
+
+var topStoriesURL = 'https://hacker-news.firebaseio.com/v0/topstories.json';
+var StoryUrl = 'https://hacker-news.firebaseio.com/v0/item/'
+
+var isJSONResponse = function(headers) {
+  return headers['content-type'].includes('json');
+};
+
+var getJSONFromHackerNews = function (url, callback) {
+  request.get(url, function(err, response, body) {
+    var data = null;
+    if (err) {
+      callback(err, null);
+    } else if (!isJSONResponse(response.headers)) {
+      callback(new Error('Response did not contain JSON data.'), null);
+    } else {
+      data = JSON.parse(body);
+      callback(null, data);
+    }
+  });
+};
+
+
+
+exports.fill = (req,res) => { try{
+  getJSONFromHackerNews(topStoriesURL, function(err, data) {
+    data.forEach(id => {
+      getJSONFromHackerNews(StoryUrl+id+'.json', function(err, data)
+      {
+        Story.create(data);
+      })
+    });
+  
+    console.log(err, 'err, expect to be null');
+    console.log(data, 'data, expect to be ids for top 500 stories');
+    // mongoose.disconnect();
+  
+  });
+}catch(err){
+  console.error(err);
+}
+}
