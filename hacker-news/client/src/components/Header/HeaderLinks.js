@@ -91,15 +91,14 @@ export default function HeaderLinks(props) {
   };
 
   const create = (e) =>{
-    handleClose();
     e.preventDefault();
-
+    
     setMessage("");
     setLoading(true);
-console.log(title);
-console.log(description);
+    console.log(title);
+    console.log(description);
     // form.current.validateAll();
-
+    
     if (title && description) {
       storyService.create(title, description).then(
         () => {
@@ -107,16 +106,17 @@ console.log(description);
         },
         (error) => {
           const resMessage =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
             error.message ||
             error.toString();
-
-          setLoading(false);
-          setMessage(resMessage);
-        }
-      );
+            
+            setLoading(false);
+            setMessage(resMessage);
+          }
+        );
+      handleClose();
     } else {
       setLoading(false);
     }
