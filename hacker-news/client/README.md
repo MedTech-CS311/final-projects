@@ -1,0 +1,1 @@
+To run the Client side : **npm start**
