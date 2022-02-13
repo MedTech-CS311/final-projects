@@ -1,0 +1,53 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+#submit-button {
+    background-color: #00559A;
+    font-weight: 200;
+    margin-top: 40px;
+    border: solid 1px;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    width: 20%;
+    margin-left: 25%;
+
+}
+#submit-button:hover{ 
+    background-color: green;
+    color: white;
+    
+}
+#image {
+    margin-left: 25%;
+}
+.input {
+    display: flex;
+    font: bold;
+    margin-top: 10px;
+    margin-left:30px;
+    margin-right: 10px;
+    font-family: Zen Antique;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+label{
+    width:5%;
+}
+#title {
+    font-family: Zen Antique;
+    color: navy;
+    margin-left: 25%;
+    size: 70px;
+    font: bold;
+
+}
+
+.Form {
+    border-color: blue;
+    box-sizing:border-box;
+    position: static;
+}

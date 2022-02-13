@@ -1,0 +1,104 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.title {
+  color: red;
+  text-align: center;
+  font-family: serif;
+  size: 600;
+}
+
+.header{
+  margin-left: 18%;
+  display: inline-block;
+}
+.myLogo {
+  align-content: center;
+  display: inline;
+  float: left;
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: autos;
+  width: 50%;
+  content: url('https://o.remove.bg/downloads/164a26ba-41cd-4d7d-b500-8075dc058961/2-24425_pinoy-pokemon-go-pokemon-go-logo-transparent-removebg-preview.png');
+}
+.user {
+  text-align: center;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  margin-top: 100px;
+  margin-right: 2px;
+  font-size: large;
+  color: #004478;
+  text-align: center;
+  font-family: serif;
+  font-size: 70px;
+}
+
+.button {
+  background-color:  #00559A;
+  font-weight: 200;
+  margin-top: 40px;
+  border: solid 2px;
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+  width: 20%;
+  margin-left: 10%;
+  align-self: center;
+}
+
+.button:hover {
+  background-color: green;
+  color: white;
+}
+
+.Welcome {
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190628/ourmid/pngtree-elegant-light-blue-line-background-image_272095.jpg');
+  width:100%;
+  height:100%;
+ 
+  box-sizing:border-box;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center;
+
+}
+
