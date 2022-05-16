@@ -5,29 +5,7 @@ a set composed of the first original 151 pokemons.
 Interacting with the cards available, you can access the official information about each pokemon.
 ![image](https://user-images.githubusercontent.com/77679303/168440522-b47b3a3b-a86d-4c11-8662-56de4b025440.png)
 
-
-
-## Contribution
-
-Thank you for your interest in our project. There are many ways to contribute,
-and we appreciate all of them :
-
-- Source code
-- Unit tests
-- Bug Reports
-- Documentation
-- Localization (Translation)
-- ...
-
-Contributions should be under the terms of the MIT license.
-
-> [Check out the license of this project.](LICENSE)
-
-## How to build
-
-> [Check out BUILD.md](BUILD.md)
-
-## Authors / Contributors
+## Authors
 
 The project was originally developed by:
 
