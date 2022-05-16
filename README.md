@@ -1,23 +1,42 @@
-# Final Projects
+# Poké-MongoDB
 
-## Team composition
+Poké-Mongo is a web-based app where you can create, view, update and delete pokemons from
+a set composed of the first original 151 pokemons.
+Interacting with the cards available, you can access the official information about each pokemon.
+![image](https://user-images.githubusercontent.com/77679303/168440522-b47b3a3b-a86d-4c11-8662-56de4b025440.png)
 
-Edit this file by filling your team composition here:
 
-- [ ] _Aymen Hammami_ | _aymendps_ | **Front End**
-- [ ] _Aziz Maazouz_ | _aziz-maazouz_ | **Front End**
-- [ ] _Youssef Aydi_ | _youssef-aydi_ | **Back End**
 
-## Heroku
+## Contribution
 
-Link: https://my-poke-mongo.herokuapp.com/
+Thank you for your interest in our project. There are many ways to contribute,
+and we appreciate all of them :
 
-## Submission
+- Source code
+- Unit tests
+- Bug Reports
+- Documentation
+- Localization (Translation)
+- ...
 
-Your final Deadline for submission is **`the 11th of December 2021`**. A weekly follow up session can be organised on demand.
+Contributions should be under the terms of the MIT license.
 
-To submit your work:
+> [Check out the license of this project.](LICENSE)
 
-- [ ] Make a demo of your project and upload it to [this folder](https://drive.google.com/drive/folders/14ndlnd1BK9EF7XdZLrgrNdtidr3X-r0a?usp=sharing). If you feel like you need help to get over this, refer to the steps in the [recording guidelines](./RECORDING.md).
-- [ ] Deploy your application to one of these [free hosting services](https://blogs.devchallenges.io/posts/tJ26U8MhZTPgBSRSwpqr) or to [heroku](https://www.heroku.com/)
-- [ ] Create a Pull Request from your forked repository
+## How to build
+
+> [Check out BUILD.md](BUILD.md)
+
+## Authors / Contributors
+
+The project was originally developed by:
+
+- [Aymen HAMMAMI](https://github.com/aymendps)
+- [Aziz MAAZOUZ](https://github.com/aziz-maazouz)
+- [Youssef AYDI](https://github.com/youssef-aydi)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+
